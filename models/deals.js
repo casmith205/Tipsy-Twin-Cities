@@ -21,7 +21,11 @@ module.exports = function(sequelize, DataTypes) {
       },
       deal_type: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        validation: {
+          args: [['food', 'drink']],
+          msg: "Must be Food or Drink"
+        }
       }
     });
   
