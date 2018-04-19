@@ -1,0 +1,37 @@
+.container {
+    background-color: green;
+}
+.display-4 {
+    color: red;
+    text-align: center;
+
+}
+.lead {
+    text-align: center;
+    color: black;
+}
+#jumbo {
+    background-color:darkgray;
+}
+#find {
+    background-color: darkviolet;
+}
+#button {
+    float: right;
+}
+.check {
+    background-color:grey;
+}
+#test {
+    background-color: indianred;
+}
+#content {
+    background-color: greenyellow;
+}
+#page {
+    min-height: 100vh;
+}
+/* body {
+    background-color: blue;
+} */
+
