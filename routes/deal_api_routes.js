@@ -35,7 +35,7 @@ module.exports = function (app) {
                     [Op.lte]: req.body.start_time
                 },
                 end_time: {
-                    [Op.gte]: req.body.end_time
+                    [Op.gte]: req.body.start_time
                 }
             },
         })

@@ -9,14 +9,12 @@ $(function () {
         var dealType = $("#deal_type").val();
         var currentDay = moment().format('dddd');
         var startTime = $("#start_time").val();
-        var endTime = $("#end_time").val();
      
         // Set the information that we want to send to the API....
         var searchInfo = {
             deal_type: dealType,
             day: currentDay,
-            start_time: startTime,
-            end_time: endTime 
+            start_time: startTime
         };
         // Send the GET request to DEALS
         $.ajax("/api/deals/search", {
