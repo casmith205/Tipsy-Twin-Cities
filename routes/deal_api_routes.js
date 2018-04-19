@@ -31,6 +31,12 @@ module.exports = function (app) {
             where: {
                 deal_type: req.body.deal_type,
                 day: req.body.day,
+                start_time: {
+                    [Op.lte]: req.body.start_time
+                },
+                end_time: {
+                    [Op.gte]: req.body.end_time
+                }
             },
         })
             .then(function (result) {
