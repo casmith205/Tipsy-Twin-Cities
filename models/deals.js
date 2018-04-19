@@ -27,8 +27,7 @@ module.exports = function(sequelize, DataTypes) {
     });
   
     Deal.associate = function(models) {
-      // We're saying that a Post should belong to an Author
-      // A Post can't be created without an Author due to the foreign key constraint
+      // A Deal can't be created without a Restaurant due to the foreign key constraint
       Deal.belongsTo(models.Restaurant, {
         foreignKey: {
           allowNull: false
