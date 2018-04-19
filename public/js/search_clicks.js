@@ -1,16 +1,20 @@
 // Handle the clicks of the "submit" button on the form 
 // and the click of the restaurants that show up on submit
-
+var moment = require("moment");
 
 $(function () {
     // On the click of the submit button of the form... 
     $("#submitBtn").on("click", function (event) {
         // Grab info from the search...
         var dealType = $("#deal-type").val();
+        var currentDay = moment().format('dddd');
+    
         // ****ADD IN OTHER SEARCH PARAMS
         // Set the information that we want to send to the API....
+       
         var searchInfo = {
-            deal_type: dealType
+            deal_type: dealType,
+            day: currentDay
             // ****ADD IN OTHER SEARCH PARAM VARIABLES
 
         };
