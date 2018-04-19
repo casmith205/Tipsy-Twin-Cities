@@ -6,17 +6,15 @@ $(function () {
     // On the click of the submit button of the form... 
     $("#submitBtn").on("click", function (event) {
         // Grab info from the search...
-        var dealType = $("#deal-type").val();
+        var dealType = $("#deal_type").val();
         var currentDay = moment().format('dddd');
-    
-        // ****ADD IN OTHER SEARCH PARAMS
+        var startTime = $("#start_time").val();
+     
         // Set the information that we want to send to the API....
-       
         var searchInfo = {
             deal_type: dealType,
-            day: currentDay
-            // ****ADD IN OTHER SEARCH PARAM VARIABLES
-
+            day: currentDay,
+            start_time: startTime
         };
         // Send the GET request to DEALS
         $.ajax("/api/deals/search", {
@@ -29,9 +27,9 @@ $(function () {
                 location.reload();
             }
         );
-        
-        
+
+
         // DO A SIMILAR THING ON THE CLICK OF THE RESTAURANT
 
-});
+    });
 });
