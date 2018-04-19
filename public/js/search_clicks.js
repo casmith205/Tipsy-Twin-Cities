@@ -6,7 +6,7 @@ $(function () {
     // On the click of the submit button of the form... 
     $("#submitBtn").on("click", function (event) {
         // Grab info from the search...
-        var dealType = $("deal-type").val();
+        var dealType = $("#deal-type").val();
         // ****ADD IN OTHER SEARCH PARAMS
         // Set the information that we want to send to the API....
         var searchInfo = {
@@ -14,7 +14,7 @@ $(function () {
             // ****ADD IN OTHER SEARCH PARAM VARIABLES
 
         };
-        // Send the GET request to RESTAURANTS
+        // Send the GET request to DEALS
         $.ajax("/api/deals/search", {
             type: "GET",
             data: searchInfo
