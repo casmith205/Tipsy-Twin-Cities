@@ -8,6 +8,12 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.TEXT
       },
       restaurant_website: {
+        type: DataTypes.STRING,
+        validate: {
+          isUrl: true
+        }
+      },
+      restaurant_address: {
         type: DataTypes.STRING
       }
     });

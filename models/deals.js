@@ -17,8 +17,7 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       },
       restrictions: {
-        type: DataTypes.TEXT,
-        allowNull: false
+        type: DataTypes.TEXT
       },
       deal_type: {
         type: DataTypes.STRING,
