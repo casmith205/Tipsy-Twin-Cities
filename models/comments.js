@@ -1,30 +1,26 @@
-module.exports = function(sequelize, DataTypes) {
-    var Comm = sequelize.define("Comm", {
-      comment_text: {
-        type: DataTypes.STRING,
+module.exports = function (sequelize, DataTypes) {
+  var Comm = sequelize.define("Comm", {
+    comment_text: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    rating: {
+      type: DataTypes.STRING,
+    }
+  });
+
+  Comm.associate = function (models) {
+    Comm.belongsTo(models.User, {
+      foreignKey: {
         allowNull: false
-      },
-      rating: {
-        type: DataTypes.STRING,
       }
-    });
-  
-    Comm.associate = function(models) {
-      Comm.belongsTo(models.User, {
+    }),
+      Comm.belongsTo(models.Restaurant, {
         foreignKey: {
           allowNull: false
         }
       });
-    };
-
-    Comm.associate = function(models) {
-        Comm.belongsTo(models.Restaurant, {
-          foreignKey: {
-            allowNull: false
-          }
-        });
-      };
-  
-    return Comm;
   };
-  
+
+  return Comm;
+};
