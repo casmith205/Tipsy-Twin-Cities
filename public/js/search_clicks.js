@@ -30,3 +30,4 @@ $(function () {
         // DO A SIMILAR THING ON THE CLICK OF THE RESTAURANT
 
 });
+});
