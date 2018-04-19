@@ -29,7 +29,7 @@ module.exports = function (app) {
         db.Deal.findAll({
             include: [db.Restaurant],
             where: {
-                deal_type: req.params.deal_type
+                deal_type: req.body.deal_type
             },
         })
             .then(function (result) {
