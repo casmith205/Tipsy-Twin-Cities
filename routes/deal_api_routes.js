@@ -25,11 +25,18 @@ module.exports = function (app) {
 
     // GET route for getting CERTAIN deals
     // ****NEED TO EDIT THIS TO CORRESPOND TO FORM******
-    app.get("/deals/:id", function (req, res) {
+    app.get("/deals/search", function (req, res) {
         db.Deal.findAll({
             include: [db.Restaurant],
             where: {
-                id: req.params.id
+                deal_type: req.body.deal_type,
+                day: req.body.day,
+                start_time: {
+                    [Op.lte]: req.body.start_time
+                },
+                end_time: {
+                    [Op.gte]: req.body.start_time
+                }
             },
         })
             .then(function (result) {

@@ -23,22 +23,22 @@ module.exports = function (app) {
             });
     });
 
-    // GET route for getting CERTAIN restaurants
-    // ****NEED TO EDIT THIS TO CORRESPOND TO FORM******
-    app.get("/restaurants/:id", function (req, res) {
-        db.Restaurant.findAll({
-            include: [db.Deal],
-            where: {
-                id: req.params.id
-            },
-        })
-            .then(function (result) {
-                var restObj = {
-                    restaurants: result
-                }
-                res.render("restaurant", restObj);
-            });
-    });
+    // // GET route for getting CERTAIN restaurants
+    // // ****NEED TO EDIT THIS TO CORRESPOND TO FORM******
+    // app.get("/restaurants/search", function (req, res) {
+    //     db.Restaurant.findAll({
+    //         include: [db.Deal],
+    //         where: {
+    //             id: req.params.id
+    //         },
+    //     })
+    //         .then(function (result) {
+    //             var restObj = {
+    //                 restaurants: result
+    //             }
+    //             res.render("restaurant", restObj);
+    //         });
+    // });
 
     // POST route for saving a new restaurant
     app.post("/api/restaurants", function (req, res) {
