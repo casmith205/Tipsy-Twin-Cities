@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
     Restaurant.associate = function(models) {
     // Associating Author with Posts
     // When an Author is deleted, also delete any associated Posts
-    Restaurant.hasMany(models.Deals, {
+    Restaurant.hasMany(models.Deal, {
       onDelete: "cascade"
     });
   };
