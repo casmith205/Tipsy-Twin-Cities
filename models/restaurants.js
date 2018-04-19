@@ -22,6 +22,11 @@ module.exports = function(sequelize, DataTypes) {
       Restaurant.hasMany(models.Deal, {
         onDelete: "cascade"
     });
+
+    Restaurant.associate = function(models) {
+      Restaurant.hasMany(models.Comment, {
+        onDelete: "cascade"
+    });
   };
     return Restaurant;
 };
