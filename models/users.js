@@ -22,12 +22,13 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       },
       verified: {
-        type: DataTypes.BOOLEAN
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
       }
     });
 
     User.associate = function(models) {
-      User.hasMany(models.Comment, {
+      User.hasMany(models.Comm, {
         onDelete: "cascade"
     });
   };
