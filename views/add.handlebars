@@ -1,0 +1,14 @@
+<form class="form-inline">
+    <div class="form-group mb-2">
+        <label class=" mr-1">Name: </label>
+        <select id="exsistingCustomers m-3">
+            {{#each customers}}
+            <option id="customer" customerId="{{id}}" value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select>
+        <p>
+            <a href="/menu" id="userSubmit" type="submit" class="btn">Welcome Back!</a>
+        </p>
+    </div>
+</form>
+</div>
