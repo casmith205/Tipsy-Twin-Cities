@@ -1,6 +1,45 @@
 // Handle the clicks of the "verify" button and "add comment" button
 
-$(function() {
+
+$(function () {
+    $("#dealsDiv").hide()
+    $("#contactDiv").hide()
+    $("#mapDiv").hide()
+
+    $("#detailsBtn").on("click", function (event) {
+        event.preventDefault()
+        $("#detailsDiv").show()
+        $("#contactDiv").hide()
+        $("#dealsDiv").hide()
+        $("#mapDiv").hide()
+
+    })
+    $("#dealsBtn").on("click", function (event) {
+        event.preventDefault()
+        console.log("onclick working")
+        $("#detailsDiv").hide()
+        $("#contactDiv").hide()
+        $("#mapDiv").hide()
+        $("#dealsDiv").show()
+    })
+
+    $("#contactBtn").on("click", function (event) {
+        event.preventDefault()
+        $("#detailsDiv").hide()
+        $("#dealsDiv").hide()
+        $("#mapDiv").hide()
+        $("#contactDiv").show()
+    })
+
+    $("#mapBtn").on("click", function (event) {
+        event.preventDefault()
+        $("#detailsDiv").hide()
+        $("#dealsDiv").hide()
+        $("#contactDiv").hide()
+        $("#mapDiv").show()
+    })
+    
+
     // On the click of the add comment button.....
     $("#commentBtn").on("click", function(event) {
         // Grab info from the search...
@@ -30,6 +69,7 @@ $(function() {
         );
 
     });
+
 
     ("#resInput").on("click", function(event) {
         // Grab info from the search...

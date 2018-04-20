@@ -1,14 +1,134 @@
-<!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-                <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"><img src="img/logo.jpg" alt="logo"/> </a>
-            </div>
+{{!-- detailed results per restuarant --}}
+
+<div class="row mt-4">
+  <div class="col-md-1"></div>
+  <div class="card text-center col-md-10">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <button type="button" id="detailsBtn" class="btn btn-outline-dark nav-link ">Restaurant Details</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" id="dealsBtn" class="btn btn-outline-dark nav-link ">All Deals</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" id="contactBtn" class="btn btn-outline-dark nav-link ">Contact</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" id="mapBtn" class="btn btn-outline-dark nav-link ">Directions/Map</button>
+        </li>
+
+      </ul>
+    </div>
+    <div class="card-body">
+      <div id="detailsDiv">
+        <h5 class="card-title" id="restaurantName">Restaurant name</h5>
+        <p class="card-text" id="restaurantType">Restaurant Type: Delicious </p>
+        <a id="restaurantWeblink" href="" class="btn btn-outline-dark">Go to Website</a>
+        <a id="restaurantWeblink" href="/search" class="btn btn-outline-dark">Back to Search</a>
+        <h4>Leave a Comment</h4>
+        <form class="card mt-4 text-center col-md-10">
+          <div class="form-group">
+            <label>User Name? </label>
+            <input type="text" class="form-control" id="userName" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label>Rating</label>
+            <select multiple class="form-control" id="userRating">
+              <option value="1">1 *</option>
+              <option value="2">2 **</option>
+              <option value="3">3 ***</option>
+              <option value="4">4 ****</option>
+              <option value="5">5*****</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label id="comment">Leave a Comment</label>
+            <textarea class="form-control" rows="3"></textarea>
+          </div>
+        </form>
+      </div>
+      <div id="dealsDiv">
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">Day of Deal</th>
+              <th scope="col">Deal Type</th>
+              <th scope="col">Start Time</th>
+              <th scope="col">End Time</th>
+              <th scope="col">Deal Deets!</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Monday</th>
+              <td>Food</td>
+              <td>4:00</td>
+              <td>6:00</td>
+              <td>Free food</td>
+            </tr>
+            <tr>
+              <th scope="row">Tuesday</th>
+              <td>Both</td>
+              <td>4:00</td>
+              <td>6:00</td>
+              <td>Free food, free drinks, everyone can have anything they want! so much stuff going on in this deal you dont
+                want to miss it!</td>
+            </tr>
+            <tr>
+              <th scope="row">Wednesday</th>
+              <td>Food</td>
+              <td>4:00</td>
+              <td>6:00</td>
+              <td>Free food</td>
+            </tr>
+            <tr>
+              <th scope="row">Thursday</th>
+              <td>Food</td>
+              <td>4:00</td>
+              <td>6:00</td>
+              <td>Free food</td>
+            </tr>
+            <tr>
+              <th scope="row">Friday</th>
+              <td colspan="4">if deal type null / cannot find day match display no Deal in td w/colspan = "4"</td>
+
+            </tr>
+            <tr>
+              <th scope="row">Saturday</th>
+              <td>Drinks</td>
+              <td>4:00</td>
+              <td>6:00</td>
+              <td>All the drinks</td>
+            </tr>
+            <tr>
+              <th scope="row">Sunday</th>
+              <td>Food</td>
+              <td>4:00</td>
+              <td>6:00</td>
+              <td>Free food</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="contactDiv">
+        <h5>phone number maybe (715) 555-4738</h5>
+        <h5>12345 Free Stuff Way</h5>
+        <h5>Drinkland, US</h5>
+        <h5>80938</h5>
+      </div>
+      <div id="mapDiv">
+        <p>map and stuff from google api... could do get call on click of button</p>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-md-1"></div>
 </div>
-</nav>
+<div class="row">
+
+
+</div>
+
+
