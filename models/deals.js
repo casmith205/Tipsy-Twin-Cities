@@ -23,8 +23,8 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false,
         validation: {
-          args: [['food', 'drink']],
-          msg: "Must be Food or Drink"
+          args: [['food', 'drink', 'both']],
+          msg: "Must be Food, Drink, or Both"
         }
       }
     });
