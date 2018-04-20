@@ -17,7 +17,7 @@ module.exports = function (app) {
     })
 
     //display specific restaurant data on click of that restuarant
-    app.get("/resaurant/:id", function (req, res) {
+    app.get("/restaurant/:id?", function (req, res) {
 
         console.log(req.params.id)
         var restaurantId = req.params.id

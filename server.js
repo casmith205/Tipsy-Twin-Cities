@@ -33,7 +33,7 @@ require("./routes/deal_api_routes.js")(app)
 //restaurant routes
 require("./routes/restaurant_api_routes.js")(app)
 //user routes
-//require("./routes/user_api_routes.js")(app)
+require("./routes/user_api_routes.js")(app)
 
 
 
