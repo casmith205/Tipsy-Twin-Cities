@@ -71,7 +71,7 @@ $(function () {
     });
 
 
-    ("#resInput").on("click", function(event) {
+    $("#resInput").on("click", function(event) {
         // Grab info from the search...
         var restaurants_Id = $("#restaurantId").val();
 
