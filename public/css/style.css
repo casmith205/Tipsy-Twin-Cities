@@ -21,37 +21,33 @@ body{
 
 }
 
-.display-4 {
-    color: red;
-    text-align: center;
+/* HOME PAGE STYLING */
 
+.jumbotron{
+    padding: 50px;
 }
-.lead {
+
+.display-4{
     text-align: center;
+    padding: 20px;
+}
+.intro{
+    padding: 30px;
+}
+.findHH{
+    text-align: center;
+}
+.btn-user{
+    background: grey;
     color: black;
 }
-#jumbo {
-    background-color:darkgray;
-}
-#find {
-    background-color: darkviolet;
-}
-#button {
-    float: right;
-}
-.check {
-    background-color:grey;
-}
-#test {
-    background-color: indianred;
-}
-#content {
-    background-color: greenyellow;
-}
-#page {
-    min-height: 100vh;
-}
-/* body {
-    background-color: blue;
-} */
 
+a{
+    color: black;
+    text-decoration-style: none;
+}
+
+a:hover{
+    color: grey;
+    text-decoration-line: none;
+}
