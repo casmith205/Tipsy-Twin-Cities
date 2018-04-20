@@ -24,7 +24,6 @@ module.exports = function (app) {
     });
 
     // GET route for getting CERTAIN deals
-    // ****NEED TO EDIT THIS TO CORRESPOND TO FORM******
     app.get("/deals/search", function (req, res) {
         db.Deal.findAll({
             include: [db.Restaurant],
