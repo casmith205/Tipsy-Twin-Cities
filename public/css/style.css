@@ -1,3 +1,25 @@
+
+body{
+    background-image: url("https://image.freepik.com/free-photo/wooden-planks-with-blurred-restaurant-background_1253-56.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card{
+    background-color: antiquewhite
+}
+
+.btn{
+    background-color:  none;
+    color:rgba(112, 76, 34, 0.877);
+}
+
+.btn:hover{
+    background-color:rgba(112, 76, 34, 0.61);
+    color: blanchedalmond ;
+    
+
+}
 .container {
     background-color: green;
 }
