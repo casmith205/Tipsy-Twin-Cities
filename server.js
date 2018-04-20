@@ -26,9 +26,11 @@ app.set("view engine", "handlebars");
 
 // Routes
 // =============================================================
+//html routes
+require("./routes/html_routes.js")(app)
 //comment routes
 require("./routes/comment_api_routes.js")(app)
-//html routes
+//deal routes
 require("./routes/deal_api_routes.js")(app)
 //restaurant routes
 require("./routes/restaurant_api_routes.js")(app)

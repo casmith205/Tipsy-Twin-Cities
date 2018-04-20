@@ -1,6 +1,8 @@
 
 //require models
 var db = require("../models")
+var path = require("path");
+
 
 //html routes...
 module.exports = function (app) {
@@ -17,21 +19,23 @@ module.exports = function (app) {
     })
 
     //display specific restaurant data on click of that restuarant
-    app.get("/restaurant/:id?", function (req, res) {
+    app.get("/restaurant", function (req, res) {
 
-        console.log(req.params.id)
-        var restaurantId = req.params.id
-        console.log(restaurantId)
-        db.Restaurant.findAll({
-            where: {
-                id: restaurantId
-            }
-        }).then(function(data){
-            var restaurantObj= {
-                resaurant:data
+        // console.log(req.params.id)
+        // var restaurantId = req.params.id
+        // console.log(restaurantId)
+        // db.Restaurant.findAll({
+        //     where: {
+        //         id: restaurantId
+        //     }
+        // }).then(function(data){
 
-            }
-            res.render("restaurant", restaurantObj)
-        })
+        //     var restaurantObj= {
+        //         resaurant:data
+
+        //     }
+            res.render("restaurant") //, restaurantObj
+        //})
+
     })
 }
