@@ -1,5 +1,4 @@
 // Handle the clicks of the "Sign in" button 
-var moment = require("moment");
 
 $(function() {
     $("#userInput").on("click", function(event) {
