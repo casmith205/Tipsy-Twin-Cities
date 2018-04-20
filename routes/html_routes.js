@@ -18,6 +18,11 @@ module.exports = function (app) {
 
     })
 
+    //display add page on click of add button
+    app.get("/add", function (req, res) {
+       res.render("add");
+    })
+
     //display specific restaurant data on click of that restuarant
     app.get("/restaurant", function (req, res) {
 
