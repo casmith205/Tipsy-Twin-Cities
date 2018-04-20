@@ -28,23 +28,83 @@ module.exports = function (app) {
 
         // console.log(req.params.id)
         // var restaurantId = req.params.id
-        var restaurantId= 1
+        var restaurantId = 1
         console.log(restaurantId)
         db.Restaurant.findAll({
             where: {
                 id: restaurantId
             },
-            include:[db.Deal]
-        }).then(function(data){
+            include: [db.Deal]
+        }).then(function (data) {
 
-            var restaurantObj= {
-                restaurant:data
+            var restaurantObj = {
+                restaurant: data
 
             }
-            console.log(restaurantObj)
-            console.log("restaurant data obj", restaurantObj.restaurant[0].dataValues)
 
-            res.render("restaurant")
+            // console.log("entire res object________________________________________________________________")
+            // console.log(restaurantObj)
+
+            // console.log("restaurant array ______________________________________")
+            // console.log(restaurantObj.restaurant[0])
+
+            // console.log("data values  ______________________________________")
+            // console.log(restaurantObj.restaurant[0].dataValues)
+
+            // console.log("Deals ?!?!?!?! ______________________________________")
+            // console.log(restaurantObj.restaurant[0].dataValues.Deals)
+
+            // console.log("Deals index 0 ?!?!?!?! ______________________________________")
+            // console.log(restaurantObj.restaurant[0].dataValues.Deals[0])
+
+            var dealArray = restaurantObj.restaurant[0].dataValues.Deals
+            console.log("Deals index 0 ?!?!?!?! ______________________________________")
+            console.log(dealArray[0])
+            console.log("deal day: " + dealArray[0].day)
+            console.log("deal desc: " + dealArray[0].deal_description)
+            console.log("deal start: " + dealArray[0].start_time)
+            console.log("deal end: " + dealArray[0].end_time)
+            console.log("deal type: " + dealArray[0].deal_type)
+
+            "has deal val________________________________"
+            for (var i = 0; i < dealArray.length; i++) {
+                if (dealArray[i].day === "Monday") {
+                    dealArray[i].hasDeal = true
+                    console.log(dealArray[i].hasDeal)
+                }
+                else if (dealArray[i].day === "Tuesday") {
+                    dealArray[i].hasDeal = true
+                    console.log(dealArray[i].hasDeal)
+                }
+                else if (dealArray[i].day === "Wednesday") {
+                    dealArray[i].hasDeal = true
+                    console.log(dealArray[i].hasDeal)
+                }
+
+                else if (dealArray[i].day === "Thursday") {
+                    dealArray[i].hasDeal = true
+                    console.log(dealArray[i].hasDeal)
+                }
+                else if (dealArray[i].day === "Friday") {
+                    dealArray[i].hasDeal = true
+                    console.log(dealArray[i].hasDeal)
+                }
+                else if (dealArray[i].day === "Saturday") {
+                    dealArray[i].hasDeal = true
+                    console.log(dealArray[i].hasDeal)
+                }
+                else if (dealArray[i].day === "Sunday") {
+                    dealArray[i].hasDeal = true
+                    console.log(dealArray[i].hasDeal)
+                }
+                //this area not totally jiving yet
+                // else  {
+                //     dealArray[i].hasDeal = false
+                //     console.log(dealArray[i].hasDeal)
+                // }
+            }
+
+            res.render("restaurant", restaurantObj)
         })
 
     })
