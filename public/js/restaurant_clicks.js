@@ -71,25 +71,7 @@ $(function () {
     });
 
 
-    ("#resInput").on("click", function(event) {
-        // Grab info from the search...
-        var restaurants_Id = $("#restaurantId").val();
 
-        // Set the information that we want to send to the API....
-        var restInfo = {
-            restLocation: restLocation,
-            restWeb: restWeb
-        };
-        $.ajax("/api/restaurants/search", {
-            type: "GET",
-            data: restaurantInfo
-        }).then(
-            function() {
-                console.log("Searched for the following: ", restaurantInfo);
-                // Reload the page to get the updated list
-                location.reload();
-            });
-    });
 
 
 });
