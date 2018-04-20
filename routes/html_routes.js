@@ -23,19 +23,24 @@ module.exports = function (app) {
 
         // console.log(req.params.id)
         // var restaurantId = req.params.id
-        // console.log(restaurantId)
-        // db.Restaurant.findAll({
-        //     where: {
-        //         id: restaurantId
-        //     }
-        // }).then(function(data){
+        var restaurantId= 1
+        console.log(restaurantId)
+        db.Restaurant.findAll({
+            where: {
+                id: restaurantId
+            },
+            include:[db.Deal]
+        }).then(function(data){
 
-        //     var restaurantObj= {
-        //         resaurant:data
+            var restaurantObj= {
+                restaurant:data
 
-        //     }
-            res.render("restaurant") //, restaurantObj
-        //})
+            }
+            console.log(restaurantObj)
+            console.log("restaurant data obj", restaurantObj.restaurant[0].dataValues)
+
+            res.render("restaurant")
+        })
 
     })
 }
