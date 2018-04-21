@@ -20,7 +20,7 @@ module.exports = function (app) {
 
     //display add page on click of add button
     app.get("/add", function (req, res) {
-       res.render("add");
+        res.render("add");
     })
 
     //display specific restaurant data on click of that restuarant
@@ -37,25 +37,17 @@ module.exports = function (app) {
             where: {
                 id: restaurantId
             },
-            include: [db.Deal,db.Comm]
+            include: [db.Deal, db.Comm]
         }).then(function (data) {
 
             var restaurantObj = {
                 restaurant: data
 
             }
-
-            // console.log("entire res object________________________________________________________________")
-            // console.log(restaurantObj)
+            // Deals table info...
 
             // console.log("restaurant array ______________________________________")
             // console.log(restaurantObj.restaurant[0])
-
-            // console.log("data values  ______________________________________")
-            // console.log(restaurantObj.restaurant[0].dataValues)
-
-            // console.log("Deals ?!?!?!?! ______________________________________")
-            // console.log(restaurantObj.restaurant[0].dataValues.Deals)
 
             // console.log("Deals index 0 ?!?!?!?! ______________________________________")
             // console.log(restaurantObj.restaurant[0].dataValues.Deals[0])
@@ -68,8 +60,7 @@ module.exports = function (app) {
             // console.log("deal start: " + dealArray[0].start_time)
             // console.log("deal end: " + dealArray[0].end_time)
             // console.log("deal type: " + dealArray[0].deal_type)
-
-            "has deal val________________________________"
+            console.log("has deal val________________________________")
             for (var i = 0; i < dealArray.length; i++) {
                 if (dealArray[i].day === "Monday") {
                     dealArray[i].hasDeal = true
@@ -107,8 +98,33 @@ module.exports = function (app) {
                 // }
             }
 
-            res.render("restaurant", restaurantObj)
-        })
+            // comment table info
+            console.log("comment array_____________________________-____")
+            //console.log(restaurantObj.restaurant[0].dataValues.Comms)
+            console.log("user id from Comms[0]:" + restaurantObj.restaurant[0].dataValues.Comms[0].UserId)
 
+            var userId = restaurantObj.restaurant[0].dataValues.Comms[0].UserId
+
+            db.User.findAll({
+                where: {
+                    id: userId
+                }
+            }).then(function (data) {
+                var userObj = {
+                    user: data
+                }
+                // user table info
+                console.log("user object: ", userObj)
+                console.log("user array from user obj: " + userObj.user[0].dataValues)
+                console.log("user name: " + userObj.user[0].dataValues.user_name)
+
+                var renderObj = {
+                    restaurantObj,
+                    userObj
+                }
+                res.render("restaurant", renderObj)
+            })
+
+        })
     })
 }

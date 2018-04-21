@@ -19,7 +19,7 @@
         </li>
         <li class="nav-item">
           {{!-- on click of this button will call google api/ store address as data-address attribute in button.. can grab on click
-          for api call--}} {{#each restaurant}}
+          for api call--}} {{#each restaurantObj.restaurant}}
           <button type="button" id="mapBtn" class="btn btn-outline-dark nav-link" data-address="{{restaurant_address}}">Directions/Map</button>
           {{/each}}
         </li>
@@ -29,7 +29,7 @@
     <div class="card-body">
       {{!-- general restaurant details from restaurant table in db--}}
       <div id="detailsDiv">
-        {{#each restaurant}}
+        {{#each restaurantObj.restaurant}}
         <h5 class="card-title" id="restaurantName">{{restaurant_name}}
         </h5>
         <p class="card-text" id="restaurantType">{{description}}</p>
@@ -43,21 +43,20 @@
           </div>
         </div>
         <div class="comments-list">
-          {{#each restaurant}} {{#each Comms}}
+
+          {{#each restaurantObj.restaurant}} {{#each Comms}}
           <div class="row">
             <p>
               {{createdAt}}
             </p>
-            <br>
-            <p>
-              User: {{UserId}}
-            </p>
-
             <h4>Rating: {{rating}}</h4>
             <p>{{comment_text}}</p>
           </div>
+          {{/each}} {{/each}}
+          {{#each userObj.user}} 
+          <p>{{user_name}}</p>
+          {{/each}}
         </div>
-        {{/each}} {{/each}}
       </div>
 
       {{!-- display all deals for the restaurant from deals table in db--}}
@@ -75,7 +74,7 @@
           </thead>
           <tbody>
 
-            {{#each restaurant}} {{#each Deals}} {{#if hasDeal}}
+            {{#each restaurantObj.restaurant}} {{#each Deals}} {{#if hasDeal}}
             <tr>
               <th scope="row">{{day}}</th>
               <td>{{deal_type}}</td>
@@ -88,7 +87,7 @@
         </table>
       </div>
       {{!-- display past comments, add new comment --}}
-      <div id="commentDiv" class="mx-auto">
+      <div id="commentDiv">
         <form class="card">
           <div class="form-group">
             <label id="comment">Leave a Comment</label>
@@ -114,7 +113,7 @@
         <h5> Phone number:
           <a href="tel:+1{{phone_number}}">{{phone_number}}</a>
         </h5>
-        <h5>Address: {{restaurant_address}}</address>
+        <h5>Address: {{restaurant_address}}
         </h5>
         {{/each}}
       </div>
@@ -124,10 +123,5 @@
       </div>
 
     </div>
+    <div class="col-md-1"></div>
   </div>
-  <div class="col-md-1"></div>
-</div>
-<div class="row">
-
-
-</div>
