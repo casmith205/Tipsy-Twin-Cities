@@ -1,4 +1,4 @@
-{{!-- detailed results per restuarant --}}
+{{!-- detailed results per restuarant, gets populated on click that serves restuarant html --}}
 
 <div class="row mt-4">
   <div class="col-md-1"></div>
@@ -15,13 +15,16 @@
           <button type="button" id="contactBtn" class="btn btn-outline-dark nav-link ">Contact</button>
         </li>
         <li class="nav-item">
+          {{!-- on click of this button will call google api  --}}
           <button type="button" id="mapBtn" class="btn btn-outline-dark nav-link ">Directions/Map</button>
         </li>
 
       </ul>
     </div>
     <div class="card-body">
-      <div id="detailsDiv">{{#each restaurant}}
+      {{!-- general restaurant details from restaurant table in db--}}
+      <div id="detailsDiv">
+        {{#each restaurant}}
         <h5 class="card-title" id="restaurantName">{{restaurant_name}}
         </h5>
         <p class="card-text" id="restaurantType">{{description}}</p>
@@ -50,6 +53,7 @@
           </div>
         </form>
       </div>
+      {{!-- display all deals for the restaurant from deals table in db--}}
       <div id="dealsDiv">
         <table class="table table-sm">
           <thead>
@@ -78,12 +82,14 @@
           </tbody>
         </table>
       </div>
+      {{!-- display contact info from restaurant table in db --}}
       <div id="contactDiv">
-        <h5>phone number maybe (715) 555-4738</h5>
-        <h5>12345 Free Stuff Way</h5>
-        <h5>Drinkland, US</h5>
-        <h5>80938</h5>
+        {{#each restaurant}}
+        <h5>Phone number:  {{phone_number}}</h5>
+        <h5>Address: {{restaurant_address}}</address></h5>
+        {{/each}}
       </div>
+      {{!-- display restaurant location on map using google maps api --}}
       <div id="mapDiv">
         <p>map and stuff from google api... could do get call on click of button</p>
       </div>
