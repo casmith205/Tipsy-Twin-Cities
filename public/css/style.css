@@ -1,14 +1,14 @@
-
+/* background image on all pages */
 body{
     background-image: url("https://image.freepik.com/free-photo/wooden-planks-with-blurred-restaurant-background_1253-56.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+/* card bg color */
 .card{
     background-color: antiquewhite
 }
-
+/* all buttons same colors */
 .btn{
     background-color:  none;
     color:rgba(112, 76, 34, 0.877);
@@ -49,6 +49,10 @@ a{
 a:hover{
     color: grey;
     text-decoration-line: none;
+}
+
+b{
+    font-size: 2em
 }
 
 /* SEARCH PAGE FORMATTING */
