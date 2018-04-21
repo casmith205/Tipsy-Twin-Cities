@@ -31,13 +31,13 @@ module.exports = function (app) {
 
         // console.log(req.params.id) = restaurantId
         // var restaurantId = req.params.id
-        var restaurantId = 2
-        console.log(restaurantId)
+        var restaurantId = 1
+        console.log("restaurant id: " + restaurantId)
         db.Restaurant.findAll({
             where: {
                 id: restaurantId
             },
-            include: [db.Deal]
+            include: [db.Deal,db.Comm]
         }).then(function (data) {
 
             var restaurantObj = {

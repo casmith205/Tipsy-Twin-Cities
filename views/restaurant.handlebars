@@ -12,7 +12,7 @@
           <button type="button" id="dealsBtn" class="btn btn-outline-dark nav-link ">All Deals</button>
         </li>
         <li class="nav-item">
-          <button type="button" id="commentBtn" class="btn btn-outline-dark nav-link ">Reviews</button>
+          <button type="button" id="commentBtn" class="btn btn-outline-dark nav-link ">Write a Review</button>
         </li>
         <li class="nav-item">
           <button type="button" id="contactBtn" class="btn btn-outline-dark nav-link ">Contact</button>
@@ -36,8 +36,30 @@
         <a id="restaurantWeblink" href="{{restaurant_website}}" class="btn btn-outline-dark">Go to Website</a>
         {{/each}}
         <a id="restaurantWeblink" href="/search" class="btn btn-outline-dark">Back to Search</a>
+        {{!-- see all past comments /review for restaurant --}}
+        <div class="row">
+          <div class="page-header">
+            <h1>Reviews </h1>
+          </div>
+        </div>
+        <div class="comments-list">
+          {{#each restaurant}} {{#each Comms}}
+          <div class="row">
+            <p>
+              {{createdAt}}
+            </p>
+            <br>
+            <p>
+              User: {{UserId}}
+            </p>
 
+            <h4>Rating: {{rating}}</h4>
+            <p>{{comment_text}}</p>
+          </div>
+        </div>
+        {{/each}} {{/each}}
       </div>
+
       {{!-- display all deals for the restaurant from deals table in db--}}
       <div id="dealsDiv">
         <table class="table table-sm">
@@ -66,11 +88,11 @@
         </table>
       </div>
       {{!-- display past comments, add new comment --}}
-      <div id="commentDiv" class= "mx-auto">
+      <div id="commentDiv" class="mx-auto">
         <form class="card">
           <div class="form-group">
             <label id="comment">Leave a Comment</label>
-            <textarea id ="commentText" class="form-control" rows="3"></textarea>
+            <textarea id="commentText" class="form-control" rows="3"></textarea>
           </div>
           <div class="form-group">
             <label>Rating</label>
@@ -82,106 +104,9 @@
               <option value="5">5 *****</option>
             </select>
           </div>
-          
+
           <button id="addComment" class=" btn btn-sm btn-outline-dark">Post</button>
         </form>
-
-
-        {{!--
-        <div class="row">
-          <div class="col-md-8">
-            <div class="page-header">
-              <h1>
-                <small class="pull-right">45 comments</small> Comments </h1>
-            </div>
-            <div class="comments-list">
-              <div class="media">
-                <p class="pull-right">
-                  <small>5 days ago</small>
-                </p>
-                <a class="media-left" href="#">
-                  <img src="http://lorempixel.com/40/40/people/1/">
-                </a>
-                <div class="media-body">
-
-                  <h4 class="media-heading user_name">Baltej Singh</h4>
-                  Wow! this is really great.
-
-                  <p>
-                    <small>
-                      <a href="">Like</a> -
-                      <a href="">Share</a>
-                    </small>
-                  </p>
-                </div>
-              </div>
-              <div class="media">
-                <p class="pull-right">
-                  <small>5 days ago</small>
-                </p>
-                <a class="media-left" href="#">
-                  <img src="http://lorempixel.com/40/40/people/2/">
-                </a>
-                <div class="media-body">
-
-                  <h4 class="media-heading user_name">Baltej Singh</h4>
-                  Wow! this is really great.
-
-                  <p>
-                    <small>
-                      <a href="">Like</a> -
-                      <a href="">Share</a>
-                    </small>
-                  </p>
-                </div>
-              </div>
-              <div class="media">
-                <p class="pull-right">
-                  <small>5 days ago</small>
-                </p>
-                <a class="media-left" href="#">
-                  <img src="http://lorempixel.com/40/40/people/3/">
-                </a>
-                <div class="media-body">
-
-                  <h4 class="media-heading user_name">Baltej Singh</h4>
-                  Wow! this is really great.
-
-                  <p>
-                    <small>
-                      <a href="">Like</a> -
-                      <a href="">Share</a>
-                    </small>
-                  </p>
-                </div>
-              </div>
-              <div class="media">
-                <p class="pull-right">
-                  <small>5 days ago</small>
-                </p>
-                <a class="media-left" href="#">
-                  <img src="http://lorempixel.com/40/40/people/4/">
-                </a>
-                <div class="media-body">
-
-                  <h4 class="media-heading user_name">Baltej Singh</h4>
-                  Wow! this is really great.
-
-                  <p>
-                    <small>
-                      <a href="">Like</a> -
-                      <a href="">Share</a>
-                    </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-
-
-          </div>
-        </div> --}}
-
       </div>
       {{!-- display contact info from restaurant table in db --}}
       <div id="contactDiv">

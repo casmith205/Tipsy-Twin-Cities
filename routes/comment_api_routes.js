@@ -18,7 +18,7 @@ module.exports = function (app) {
         db.Comm.findAll({
             include: [db.Restaurant, db.User],
             where: {
-                RestaurantId: req.params.id
+                RestaurantId: 1
             }
         }).then(function (commData) {
             res.json(commData)
