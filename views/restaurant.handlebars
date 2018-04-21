@@ -19,7 +19,7 @@
         </li>
         <li class="nav-item">
           {{!-- on click of this button will call google api/ store address as data-address attribute in button.. can grab on click
-          for api call--}} {{#each restaurantObj.restaurant}}
+          for api call--}} {{#each restaurant}}
           <button type="button" id="mapBtn" class="btn btn-outline-dark nav-link" data-address="{{restaurant_address}}">Directions/Map</button>
           {{/each}}
         </li>
@@ -29,7 +29,7 @@
     <div class="card-body">
       {{!-- general restaurant details from restaurant table in db--}}
       <div id="detailsDiv">
-        {{#each restaurantObj.restaurant}}
+        {{#each restaurant}}
         <h5 class="card-title" id="restaurantName">{{restaurant_name}}
         </h5>
         <p class="card-text" id="restaurantType">{{description}}</p>
@@ -44,7 +44,7 @@
         </div>
         <div class="comments-list">
 
-          {{#each restaurantObj.restaurant}} {{#each Comms}}
+          {{#each restaurant}} {{#each Comms}}
           <div class="row">
             <p>
               {{createdAt}}
@@ -53,9 +53,9 @@
             <p>{{comment_text}}</p>
           </div>
           {{/each}} {{/each}}
-          {{#each userObj.user}} 
+          {{!-- {{#each userObj.user}} 
           <p>{{user_name}}</p>
-          {{/each}}
+          {{/each}} --}}
         </div>
       </div>
 
@@ -74,7 +74,7 @@
           </thead>
           <tbody>
 
-            {{#each restaurantObj.restaurant}} {{#each Deals}} {{#if hasDeal}}
+            {{#each restaurant}} {{#each Deals}} {{#if hasDeal}}
             <tr>
               <th scope="row">{{day}}</th>
               <td>{{deal_type}}</td>

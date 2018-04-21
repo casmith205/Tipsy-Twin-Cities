@@ -103,27 +103,38 @@ module.exports = function (app) {
             //console.log(restaurantObj.restaurant[0].dataValues.Comms)
             console.log("user id from Comms[0]:" + restaurantObj.restaurant[0].dataValues.Comms[0].UserId)
 
-            var userId = restaurantObj.restaurant[0].dataValues.Comms[0].UserId
+            // var userId = restaurantObj.restaurant[0].dataValues.Comms[0].UserId
 
-            db.User.findAll({
-                where: {
-                    id: userId
-                }
-            }).then(function (data) {
-                var userObj = {
-                    user: data
-                }
-                // user table info
-                console.log("user object: ", userObj)
-                console.log("user array from user obj: " + userObj.user[0].dataValues)
-                console.log("user name: " + userObj.user[0].dataValues.user_name)
+            // var commentArray = restaurantObj.restaurant[0].dataValues.Comms
+            // var userNameArray = []
+            // for (var i = 0; i < commentArray.length; i++) {
+            //     var userId = restaurantObj.restaurant[0].dataValues.Comms[i].UserId
+            //     console.log(userId)
+            //     db.User.findAll({
+            //         where: {
+            //             id: userId
+            //         }
+            //     }).then(function (data) {
+            //         var userObj = {
+            //             user: data
+            //         }
+            //         // user table info
+            //         // console.log("user object: ", userObj)
+            //         // console.log("user array from user obj: " + userObj.user[0].dataValues)
+            //         // console.log("user name: " + userObj.user[0].dataValues.user_name)
+            //         var userName = userObj.user[0].dataValues.user_name
+            //         console.log("userName" + userName)
+            //         userNameArray.push(userName)
+            //         console.log("un array: " + userNameArray)
 
-                var renderObj = {
-                    restaurantObj,
-                    userObj
-                }
-                res.render("restaurant", renderObj)
-            })
+            //         // var renderObj = {
+            //         //     restaurantObj,
+            //         //     userObj
+            //         // }
+            //     })
+
+            // }
+            res.render("restaurant", restaurantObj)
 
         })
     })
