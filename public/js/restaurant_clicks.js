@@ -5,6 +5,7 @@ $(function () {
     $("#dealsDiv").hide()
     $("#contactDiv").hide()
     $("#mapDiv").hide()
+    $("#commentDiv").hide()
 
     $("#detailsBtn").on("click", function (event) {
         event.preventDefault()
@@ -20,6 +21,7 @@ $(function () {
         $("#detailsDiv").hide()
         $("#contactDiv").hide()
         $("#mapDiv").hide()
+        $("#commentDiv").hide()
         $("#dealsDiv").show()
     })
 
@@ -28,6 +30,7 @@ $(function () {
         $("#detailsDiv").hide()
         $("#dealsDiv").hide()
         $("#mapDiv").hide()
+        $("#commentDiv").hide()
         $("#contactDiv").show()
     })
 
@@ -36,35 +39,49 @@ $(function () {
         $("#detailsDiv").hide()
         $("#dealsDiv").hide()
         $("#contactDiv").hide()
+        $("#commentDiv").hide()
         $("#mapDiv").show()
+    })
+
+    $("#commentBtn").on("click", function(event){
+        event.preventDefault()
+        $("#detailsDiv").hide()
+        $("#dealsDiv").hide()
+        $("#contactDiv").hide()
+        $("#mapDiv").hide()
+        $("#commentDiv").show()
+
+        
     })
     
 
     // On the click of the add comment button.....
-    $("#commentBtn").on("click", function(event) {
+    $("#addComment").on("click", function(event) {
         // Grab info from the search...
         var commentText = $("#commentText").val();
-        var ratingVal = $("#ratingVal").val();
+        var ratingVal = $("#rating").val();
         // ***Need to get USER ID and RESTAURANT ID
-        // var userID = 
-        // var restID = 
+        var userID = 2
+        var restID = 1
 
         // Set the information that we want to send to the API....
         var commentInfo = {
             comment_text: commentText,
             rating: ratingVal,
-            // UserId: userID,
-            // RestaurantId: restID
+            UserId: userID,
+            RestaurantId: restID
         };
-        // Send the POST request to COMMENTS
+
+        console.log(commentInfo)
+        // Send the POST store new comment to to COMMENTS
         $.ajax("/api/comments", {
-            type: "GET",
+            type: "POST",
             data: commentInfo
         }).then(
             function() {
                 console.log("Added a new comment: ", commentInfo);
                 // Reload the page to get the updated list
-                location.reload();
+                //location.reload();
             }
         );
 

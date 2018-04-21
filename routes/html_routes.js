@@ -25,10 +25,13 @@ module.exports = function (app) {
 
     //display specific restaurant data on click of that restuarant
     app.get("/restaurant", function (req, res) {
+        //eventually /restaurant/id once we have logic for displaying results on search page
+        //store restaurant id as data attribute for each restaurant that matches...
+        //grab id on click of that restaurant to display details
 
-        // console.log(req.params.id)
+        // console.log(req.params.id) = restaurantId
         // var restaurantId = req.params.id
-        var restaurantId = 1
+        var restaurantId = 2
         console.log(restaurantId)
         db.Restaurant.findAll({
             where: {
@@ -58,13 +61,13 @@ module.exports = function (app) {
             // console.log(restaurantObj.restaurant[0].dataValues.Deals[0])
 
             var dealArray = restaurantObj.restaurant[0].dataValues.Deals
-            console.log("Deals index 0 ?!?!?!?! ______________________________________")
-            console.log(dealArray[0])
-            console.log("deal day: " + dealArray[0].day)
-            console.log("deal desc: " + dealArray[0].deal_description)
-            console.log("deal start: " + dealArray[0].start_time)
-            console.log("deal end: " + dealArray[0].end_time)
-            console.log("deal type: " + dealArray[0].deal_type)
+            // console.log("Deals index 0 ?!?!?!?! ______________________________________")
+            // console.log(dealArray[0])
+            // console.log("deal day: " + dealArray[0].day)
+            // console.log("deal desc: " + dealArray[0].deal_description)
+            // console.log("deal start: " + dealArray[0].start_time)
+            // console.log("deal end: " + dealArray[0].end_time)
+            // console.log("deal type: " + dealArray[0].deal_type)
 
             "has deal val________________________________"
             for (var i = 0; i < dealArray.length; i++) {
