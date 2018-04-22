@@ -1,14 +1,13 @@
 <div class="searchForm">
-    <form class="form-inline">
-        <div class="form-group">
+        <form class="form-inline">
+        <div class="form-group mb-2">
             <label class="mr-1">Restaurant: </label>
-            <select id="exsistingCustomers m-3">
-                {{#each restaurants}}
-                <option id="restaurant" restId="{{id}}" value="{{restaurant_name}}">{{restaurant_name}}</option>
+            <select id="exsistingRestaurants">
+                {{#each restaurant}}
+                <option class="restaurant" value="{{id}}">{{restaurant_name}}</option>
                 {{/each}}
             </select>
         </div>
-        <br>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-user" data-toggle="modal" data-target="#addRestaurant">
             Add a new restaurant...
@@ -63,25 +62,25 @@
             What day of the week is the deal?
             <br>
             <label class="form-check-label">
-                <input class="form-check-input"  id="monday" type="checkbox" value="Monday">Monday
+                <input class="form-check-input"  id="day1" type="checkbox" value="Monday">Monday
             </label>
             <label class="form-check-label">
-                <input class="form-check-input" id ="tuesday" type="checkbox" value="Tuesday">Tuesday
+                <input class="form-check-input" id ="day2" type="checkbox" value="Tuesday">Tuesday
             </label>
             <label class="form-check-label">
-                <input class="form-check-input" id="wednesday" type="checkbox" value="Wednesday">Wednesday
+                <input class="form-check-input" id="day3" type="checkbox" value="Wednesday">Wednesday
             </label>
             <label class="form-check-label">
-                <input class="form-check-input" id="thursday" type="checkbox" value="Thursday">Thursday
+                <input class="form-check-input" id="day4" type="checkbox" value="Thursday">Thursday
             </label>
             <label class="form-check-label">
-                <input class="form-check-input" id="friday" type="checkbox" value="Friday">Friday
+                <input class="form-check-input" id="day5" type="checkbox" value="Friday">Friday
             </label>
             <label class="form-check-label">
-                <input class="form-check-input" id="saturday" type="checkbox" value="Saturday">Saturday
+                <input class="form-check-input" id="day6" type="checkbox" value="Saturday">Saturday
             </label>
             <label class="form-check-label">
-                <input class="form-check-input" id="sunday" type="checkbox" value="Sunday">Sunday
+                <input class="form-check-input" id="day7" type="checkbox" value="Sunday">Sunday
             </label>
         </div>
         <div class="form row">
