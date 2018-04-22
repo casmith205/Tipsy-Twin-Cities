@@ -20,6 +20,7 @@ module.exports = function (app) {
                     restaurants: result
                 }
                 res.render("restaurant", restObj);
+                res.render("add", restObj);
             });
     });
 
@@ -45,8 +46,9 @@ module.exports = function (app) {
         db.Restaurant.create({
             restaurant_name: req.body.restaurant_name,
             description: req.body.description,
-            website: req.body.website,
-            address: req.body.address
+            phone_number: req.body.phone_number,
+            restaurant_website: req.body.website,
+            restaurant_address: req.body.address
         })
             .then(function (result) {
                 res.json(result);

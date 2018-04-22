@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false,
         validation: {
-          args: [['food', 'drink', 'both']],
+          args: [['Food', 'Drink', 'Both']],
           msg: "Must be Food, Drink, or Both"
         }
       }
