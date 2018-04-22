@@ -1,4 +1,4 @@
-/* background image on all pages */
+/* Background image on all pages */
 body{
     background-image: url("https://image.freepik.com/free-photo/wooden-planks-with-blurred-restaurant-background_1253-56.jpg");
     background-repeat: no-repeat;
@@ -51,9 +51,10 @@ a:hover{
     text-decoration-line: none;
 }
 
-b{
+.homeLinks{
     font-size: 2em
 }
+
 
 /* SEARCH PAGE FORMATTING */
 .h4{
@@ -64,4 +65,19 @@ b{
     border-radius: 20px;
     padding: 20px;
     margin-top: 50px;
+}
+
+/* ADD PAGE FORMATTING */
+.form-check-label{
+    margin: 10px;
+    padding-left: 0;
+}
+
+.form-row{
+    width: 60%;
+    margin-bottom: 15px;
+}
+
+label{
+    font-weight: bold;
 }
