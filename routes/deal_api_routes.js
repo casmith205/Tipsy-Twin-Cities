@@ -54,8 +54,8 @@ module.exports = function (app) {
             start_time: req.body.start_time,
             end_time: req.body.end_time,
             restrictions: req.body.restrictions,
-            deal_type: req.body.deal_type
-            
+            deal_type: req.body.deal_type,
+            RestaurantId: req.body.RestaurantId
         })
             .then(function (result) {
                 res.json(result);
