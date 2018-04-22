@@ -20,7 +20,15 @@ module.exports = function (app) {
 
     //display add page on click of add button
     app.get("/add", function (req, res) {
-        res.render("add");
+        db.Restaurant.findAll({
+            include: [db.Deal]
+        })
+            .then(function (result) {
+                var restObj = {
+                    restaurants: result
+                }
+                res.render("add", restObj);
+            });
     })
 
     //display specific restaurant data on click of that restuarant

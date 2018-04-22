@@ -16,11 +16,7 @@ module.exports = function (app) {
             include: [db.Deal]
         })
             .then(function (result) {
-                var restObj = {
-                    restaurants: result
-                }
-                res.render("restaurant", restObj);
-                res.render("add", restObj);
+               res.json(result)
             });
     });
 
