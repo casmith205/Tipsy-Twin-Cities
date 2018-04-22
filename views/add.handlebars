@@ -1,10 +1,10 @@
 <div class="searchForm">
     <form class="form-inline">
-        <div class="form-group">
+        <div class="form-group mb-2">
             <label class="mr-1">Restaurant: </label>
-            <select id="exsistingCustomers m-3">
-                {{#each restaurants}}
-                <option id="restaurant" restId="{{id}}" value="{{restaurant_name}}">{{restaurant_name}}</option>
+            <select id="exsistingRestaurants m-3">
+                {{#each restaurant}}
+                <option class="restaurant" restId="{{id}}" value="{{restaurant_name}}">{{restaurant_name}}</option>
                 {{/each}}
             </select>
         </div>

@@ -26,7 +26,7 @@ $(function() {
             restrictions: dealRestrictions,
             deal_type: dealType
         };
-        console.log(userInfo);
+        console.log(dealInfo);
         $.ajax("/api/deals", {
             type: "POST",
             data: dealInfo
@@ -44,7 +44,7 @@ $(function() {
         // Grab info from the search...
         var restName = $("#newRestName").val().trim();
         var restDesc = $("#newRestDescr").val().trim();
-        var restPhone = $("#newRestPhone").val().trim();
+        var restPhone = $("#newRestPhone").val();
         var restWebsite = $("#newRestWeb").val().trim();
         var restAddress = $("#newRestAddress").val().trim();
 
@@ -56,7 +56,7 @@ $(function() {
             phone_number: restPhone,
             address: restAddress
         };
-        console.log(userInfo);
+        console.log(restInfo);
         $.ajax("/api/restaurants", {
             type: "POST",
             data: restInfo
@@ -64,7 +64,7 @@ $(function() {
             function() {
                 console.log("Added the following restaurant: ", restInfo);
                 // Reload the page to get the updated list
-                location.reload();
+                // location.reload();
             });
     });
 });
