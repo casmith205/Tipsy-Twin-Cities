@@ -1,6 +1,7 @@
 // Handle the clicks of the "Add Restaurant" button and "Add Deal" button
 
 $(function() {
+    // ADD NEW DEAL
     $("#submitBtnDeal").on("click", function(event) {
         event.preventDefault();
         // Grab info from the search...
@@ -32,6 +33,36 @@ $(function() {
         }).then(
             function() {
                 console.log("Added the following deal: ", dealInfo);
+                // Reload the page to get the updated list
+                location.reload();
+            });
+    });
+
+    // ADD NEW RESTAURANT
+    $("#addRest").on("click", function(event) {
+        event.preventDefault();
+        // Grab info from the search...
+        var restName = $("#newRestName").val().trim();
+        var restDesc = $("#newRestDescr").val().trim();
+        var restPhone = $("#newRestPhone").val().trim();
+        var restWebsite = $("#newRestWeb").val().trim();
+        var restAddress = $("#newRestAddress").val().trim();
+
+        // Set the informtion that we want to send to the API....
+        var restInfo = {
+            restaurant_name: restName,
+            description: restDesc,
+            website: restWebsite,
+            phone_number: restPhone,
+            address: restAddress
+        };
+        console.log(userInfo);
+        $.ajax("/api/restaurants", {
+            type: "POST",
+            data: restInfo
+        }).then(
+            function() {
+                console.log("Added the following restaurant: ", restInfo);
                 // Reload the page to get the updated list
                 location.reload();
             });

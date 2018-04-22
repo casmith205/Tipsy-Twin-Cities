@@ -45,6 +45,7 @@ module.exports = function (app) {
         db.Restaurant.create({
             restaurant_name: req.body.restaurant_name,
             description: req.body.description,
+            phone_number: req.body.phone_number,
             website: req.body.website,
             address: req.body.address
         })
