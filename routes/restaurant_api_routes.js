@@ -20,6 +20,7 @@ module.exports = function (app) {
                     restaurants: result
                 }
                 res.render("restaurant", restObj);
+                res.render("add", restObj);
             });
     });
 

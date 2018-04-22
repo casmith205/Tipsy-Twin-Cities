@@ -1,45 +1,63 @@
 // Handle the clicks of the "Add Restaurant" button and "Add Deal" button
 
-$(function() {
+$(function () {
     // ADD NEW DEAL
-    $("#submitBtnDeal").on("click", function(event) {
+    $("#submitBtnDeal").on("click", function (event) {
         event.preventDefault();
         // Grab info from the search...
-        var restaurant_id = $("#restaurant").restId();
+        // var restaurant_id = $("#existingRestaurants").val();
+        var restaurant_id = 1
         var dealDesc = $("#newDealDesc").val();
-        var dealDays= [];
-            // have to do a prop.("checked"), get a true/false, and push to an arr
-            // if in the checked arr, create a new deal
-        var currDealDay = "Monday";
         var dealStart = $("#newDealStart").val();
         var dealEnd = $("#newDealEnd").val();
         var dealType = $("#newDealType").val();
         var dealRestrictions = $("#newDealRestrictions").val();
-
-        // Set the information that we want to send to the API....
-        var dealInfo = {
-            RestaurantId: restaurant_id,
-            deal_description: dealDesc,
-            day: currDealDay,
-            start_time: dealStart,
-            end_time: dealEnd,
-            restrictions: dealRestrictions,
-            deal_type: dealType
+        var dealDays = [];
+        // Loop through each box, check if it was checked, and psuh it to the dealDays arr if true
+        for (i = 1; i < 8; i++) {
+            var checkBox = "#day" + [i];
+            console.log(checkBox)
+            if ($(checkBox).prop("checked") == true) {
+                dealDays.push($(checkBox).val());
+            }
         };
+        console.log(dealDays)
+        var currDealDay;
+
+
         console.log(dealInfo);
-        $.ajax("/api/deals", {
-            type: "POST",
-            data: dealInfo
-        }).then(
-            function() {
-                console.log("Added the following deal: ", dealInfo);
-                // Reload the page to get the updated list
-                location.reload();
-            });
+
+        // Loop through every day that was checked, and post each deal to the db
+        for (i = 0; i < dealDays.length; i++) {
+            // Set the current day to the day at position i in the array of all checked days
+            currDealDay = dealDays[i];
+            console.log(currDealDay);
+
+            // Set the information that we want to send to the API....
+            var dealInfo = {
+                RestaurantId: restaurant_id,
+                deal_description: dealDesc,
+                day: currDealDay,
+                start_time: dealStart,
+                end_time: dealEnd,
+                restrictions: dealRestrictions,
+                deal_type: dealType
+            };
+
+
+            $.ajax("/api/deals", {
+                type: "POST",
+                data: dealInfo
+            }).then(
+                function () {
+                    console.log("Added the following deal: ", dealInfo);
+                }
+            );
+        };
     });
 
     // ADD NEW RESTAURANT
-    $("#addRest").on("click", function(event) {
+    $("#addRest").on("click", function (event) {
         event.preventDefault();
         // Grab info from the search...
         var restName = $("#newRestName").val().trim();
@@ -61,7 +79,7 @@ $(function() {
             type: "POST",
             data: restInfo
         }).then(
-            function() {
+            function () {
                 console.log("Added the following restaurant: ", restInfo);
                 // Reload the page to get the updated list
                 // location.reload();
