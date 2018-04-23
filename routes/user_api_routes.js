@@ -51,11 +51,11 @@ module.exports = function (app) {
   });
 
   // PUT route for updating user
-  app.put("/api/user/:id", function (req, res) {
+  app.put("/api/user_update", function (req, res) {
     db.User.update({"verified":true},
       {
         where: {
-          id: req.params.id
+          id: req.body.id
         }
       })
       .then(function (result) {
