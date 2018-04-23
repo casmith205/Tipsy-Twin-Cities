@@ -6,7 +6,8 @@ body{
 
 /* card bg color */
 .card{
-    background-color: antiquewhite
+    background-color: antiquewhite;
+    border-radius: 20px;
 }
 /* all buttons same colors */
 .btn{
