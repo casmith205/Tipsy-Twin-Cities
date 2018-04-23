@@ -103,3 +103,9 @@ a:hover {
 label {
     font-weight: bold;
 }
+
+/* MODAL FORMATTING */
+.modal{
+    color: black;
+    text-align: left;
+}
