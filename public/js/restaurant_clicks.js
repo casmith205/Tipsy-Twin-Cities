@@ -45,6 +45,7 @@ $(function () {
         $("#mapDiv").show()
 
         //google GET ajax call using data-address attribute stored in mapBtn
+        
     })
     //on click comment hide other divs
     $("#commentBtn").on("click", function (event) {
