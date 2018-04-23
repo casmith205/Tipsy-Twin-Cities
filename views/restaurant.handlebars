@@ -45,20 +45,18 @@
         <div class="comments-list">
 
           {{#each restaurant}} {{#each Comms}}
+          {{!-- {{#each User}} --}}
+
           <div class="row">
-            {{!-- <p>
-              {{createdAt}}
-            </p> --}}
-            <h5 class="col-md-1">{{id}}</h5>
-            <p>ideally username- working on it</p>
-            <p class ="col-md-2">Rating: {{rating}}</p>
+            
+            <p> Posted By: {{ User.user_name }} </p>
+        
+            <p class="col-md-2">Rating: {{rating}}</p>
             <p>{{comment_text}}</p>
           </div>
-            <hr class="my-4">
+          <hr class="my-4"> 
+          {{!-- //{{/each}} --}}
           {{/each}} {{/each}}
-          {{!-- {{#each userObj.user}} 
-          <p>{{user_name}}</p>
-          {{/each}} --}}
         </div>
       </div>
 
@@ -106,8 +104,9 @@
               <option value="5">5 *****</option>
             </select>
           </div>
-
-          <button id="addComment" class=" btn btn-sm btn-outline-dark">Post</button>
+          {{#each restaurant}}
+          <button id="addComment" restaurant-id="{{id}}" class="btn btn-sm btn-outline-dark">Post</button>
+          {{/each}}
         </form>
       </div>
       {{!-- display contact info from restaurant table in db --}}

@@ -37,42 +37,29 @@ module.exports = function (app) {
 
 
     //display specific restaurant data on click of that restuarant
-    app.get("/restaurant", function (req, res) {
-        //eventually /restaurant/id once we have logic for displaying results on search page
-        //store restaurant id as data attribute for each restaurant that matches...
-        //grab id on click of that restaurant to display details
-
-        // console.log(req.params.id) = restaurantId
-        // var restaurantId = req.params.id
-        var restaurantId = 1
-        console.log("restaurant id: " + restaurantId)
+    app.get("/restaurant/:id", function (req, res) {
+        var restaurantId = req.params.id
+        console.log("res id from var: " + restaurantId)
         db.Restaurant.findAll({
             where: {
                 id: restaurantId
             },
-            include: [db.Deal, db.Comm]
+            // include: [db.Deal, db.Comm, db.User]
+            include: [db.Deal,
+            {
+                model: db.Comm,
+                include: [db.User]
+            }]
+
         }).then(function (data) {
 
             var restaurantObj = {
                 restaurant: data
 
             }
-            // Deals table info...
-
-            // console.log("restaurant array ______________________________________")
-            // console.log(restaurantObj.restaurant[0])
-
-            // console.log("Deals index 0 ?!?!?!?! ______________________________________")
-            // console.log(restaurantObj.restaurant[0].dataValues.Deals[0])
 
             var dealArray = restaurantObj.restaurant[0].dataValues.Deals
-            // console.log("Deals index 0 ?!?!?!?! ______________________________________")
-            // console.log(dealArray[0])
-            // console.log("deal day: " + dealArray[0].day)
-            // console.log("deal desc: " + dealArray[0].deal_description)
-            // console.log("deal start: " + dealArray[0].start_time)
-            // console.log("deal end: " + dealArray[0].end_time)
-            // console.log("deal type: " + dealArray[0].deal_type)
+            //set has deal to display all deals in handlebars
             console.log("has deal val________________________________")
             for (var i = 0; i < dealArray.length; i++) {
                 if (dealArray[i].day === "Monday") {
@@ -111,42 +98,15 @@ module.exports = function (app) {
                 // }
             }
 
-            // comment table info
-            console.log("comment array_____________________________-____")
-            //console.log(restaurantObj.restaurant[0].dataValues.Comms)
-            console.log("user id from Comms[0]:" + restaurantObj.restaurant[0].dataValues.Comms[0].UserId)
+            // console.log(restaurantObj.restaurant[0].dataValues.Comms.User)
+            console.log(restaurantObj.restaurant[0].dataValues.Comms[0])
+            console.log("____________________________user?")
+            console.log(restaurantObj.restaurant[0].dataValues.Comms[0].dataValues.User)
+            console.log("____________________________user user?")
+            console.log(restaurantObj.restaurant[0].dataValues.Comms[0].dataValues.User.dataValues)
+            console.log("____________________________user user?")
+            console.log(restaurantObj.restaurant[0].dataValues.Comms[0].dataValues.User.dataValues.user_name)
 
-            // var userId = restaurantObj.restaurant[0].dataValues.Comms[0].UserId
-
-            // var commentArray = restaurantObj.restaurant[0].dataValues.Comms
-            // var userNameArray = []
-            // for (var i = 0; i < commentArray.length; i++) {
-            //     var userId = restaurantObj.restaurant[0].dataValues.Comms[i].UserId
-            //     console.log(userId)
-            //     db.User.findAll({
-            //         where: {
-            //             id: userId
-            //         }
-            //     }).then(function (data) {
-            //         var userObj = {
-            //             user: data
-            //         }
-            //         // user table info
-            //         // console.log("user object: ", userObj)
-            //         // console.log("user array from user obj: " + userObj.user[0].dataValues)
-            //         // console.log("user name: " + userObj.user[0].dataValues.user_name)
-            //         var userName = userObj.user[0].dataValues.user_name
-            //         console.log("userName" + userName)
-            //         userNameArray.push(userName)
-            //         console.log("un array: " + userNameArray)
-
-            //         // var renderObj = {
-            //         //     restaurantObj,
-            //         //     userObj
-            //         // }
-            //     })
-
-            // }
             res.render("restaurant", restaurantObj)
 
         })

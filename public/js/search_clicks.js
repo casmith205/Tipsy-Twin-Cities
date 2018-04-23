@@ -27,7 +27,7 @@ $(function () {
             data: searchInfo
         }).then(
             function (results) {
-                console.log("Searched for the following: ", searchInfo);            
+                console.log("Searched for the following: ", searchInfo);
                 console.log("results arry of objs: ", results)
                 for (var i = 0; i < results.length; i++) {
                     //div to hold info for each result returned
@@ -66,12 +66,13 @@ $(function () {
                     restriction.text("Restrictions: " + results[i].restrictions)
                     dealInfo.append(restriction)
                     //button to more details
-                    var detailsBtn = $("<button>")
-                    detailsBtn.attr("restaurant-id", results[i].Restaurant.id)
-                    detailsBtn.addClass("moreDetails btn btn-lrg btn-outline-dark")
-                    detailsBtn.text("I WANNA GO HERE")
-                    dealInfo.append(detailsBtn)
-
+                    var detailsLink = $("<a>")
+                    detailsLink.attr("href", "/restaurant/"+results[i].Restaurant.id)
+                    detailsLink.attr("restaurant-id", results[i].Restaurant.id)
+                    detailsLink.addClass("moreDetails btn btn-lrg btn-outline-dark")
+                    detailsLink.text("I WANNA GO HERE")
+                    dealInfo.append(detailsLink)
+              
 
                     //append results to html
                     eachResult.append(dealInfo)
@@ -81,30 +82,9 @@ $(function () {
                 }
 
             }
-        );
+        )
 
-    });
+    })
 
-    //what is this doing?  for search param on /restaurant html route?
-    $(".moreDetails").on("click", function (event) {
-        // Grab info from the search...
-        var restaurantId = $(this).attr("restaurant-id")
 
-        // Set the information that we want to send to the API....
-        var restInfo = {
-            restLocation: restLocation,
-            restWeb: restWeb
-        };
-        $.ajax("/api/restaurants/search", {
-            type: "GET",
-            data: restaurantInfo
-        }).then(
-            function () {
-
-                console.log("Searched for the following: ", restaurantInfo);
-                // Reload the page to get the updated list
-                location.reload();
-            });
-    });
-
-});
+})
