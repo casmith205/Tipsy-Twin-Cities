@@ -1,4 +1,4 @@
-// Handle the clicks of the "Sign in" button 
+// Handle the clicks of the "Sign in" button & "Sign Up" button
 
 $(function () {
     // Sign In to the website
@@ -23,7 +23,6 @@ $(function () {
                 localStorage.setItem("user_name", data[0].user_name);
                 localStorage.setItem("user_verified", data[0].verified);
                 location.reload();
-              
             });
     });
 
@@ -53,10 +52,15 @@ $(function () {
         }).then(
             function () {
                 console.log("Added the following: ", userInfo);
-                alert("You have successfully signed up!");
+                localStorage.setItem("user_id", data[0].id);
+                localStorage.setItem("user_name", data[0].user_name);
+                localStorage.setItem("user_verified", data[0].verified);
                 // Reload the page to get the updated list
                 location.reload();
             });
     });
 
 });
+
+
+
