@@ -3,8 +3,8 @@
 // Requiring our model
 var db = require("../models");
 // Requiring express
-var express = require("express");
-var app = express.Router();
+// var express = require("express");
+// var app = express.Router();
 
 // Routes
 // =============================================================
@@ -24,25 +24,23 @@ module.exports = function (app) {
     });
 
     // GET route for getting CERTAIN deals
-    app.get("/deals/search", function (req, res) {
+    app.get("/api/deals/search", function (req, res) {
+        console.log("query params: ", req.query)
         db.Deal.findAll({
             include: [db.Restaurant],
             where: {
-                deal_type: req.body.deal_type,
-                day: req.body.day,
+                deal_type: req.query.deal_type,
+                day: req.query.day,
                 start_time: {
-                    [Op.lte]: req.body.start_time
+                    $lte: req.query.start_time
                 },
                 end_time: {
-                    [Op.gte]: req.body.start_time
+                    $gte: req.query.start_time
                 }
-            },
-        })
-            .then(function (result) {
-                var dealObj = {
-                    deals: result
-                }
-                res.render("restaurant", dealObj);
+            }
+            
+        }).then(function (results) {
+                res.json(results)
             });
     });
 
