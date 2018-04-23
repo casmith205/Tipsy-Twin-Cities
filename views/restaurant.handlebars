@@ -1,4 +1,4 @@
-{{!-- detailed results per restuarant --}}
+{{!-- detailed results per restuarant, gets populated on click that serves restuarant html --}}
 
 <div class="row mt-4">
   <div class="col-md-1"></div>
@@ -12,43 +12,57 @@
           <button type="button" id="dealsBtn" class="btn btn-outline-dark nav-link ">All Deals</button>
         </li>
         <li class="nav-item">
+          <button type="button" id="commentBtn" class="btn btn-outline-dark nav-link ">Write a Review</button>
+        </li>
+        <li class="nav-item">
           <button type="button" id="contactBtn" class="btn btn-outline-dark nav-link ">Contact</button>
         </li>
         <li class="nav-item">
-          <button type="button" id="mapBtn" class="btn btn-outline-dark nav-link ">Directions/Map</button>
+          {{!-- on click of this button will call google api/ store address as data-address attribute in button.. can grab on click
+          for api call--}} {{#each restaurant}}
+          <button type="button" id="mapBtn" class="btn btn-outline-dark nav-link" data-address="{{restaurant_address}}">Directions/Map</button>
+          {{/each}}
         </li>
 
       </ul>
     </div>
     <div class="card-body">
+      {{!-- general restaurant details from restaurant table in db--}}
       <div id="detailsDiv">
-        <h5 class="card-title" id="restaurantName">Restaurant name {{restaurant.restaurant_name}}
+        {{#each restaurant}}
+        <h5 class="card-title" id="restaurantName">{{restaurant_name}}
         </h5>
-        <p class="card-text" id="restaurantType">Restaurant Type: Delicious </p>
-        <a id="restaurantWeblink" href="" class="btn btn-outline-dark">Go to Website</a>
+        <p class="card-text" id="restaurantType">{{description}}</p>
+        <a id="restaurantWeblink" href="{{restaurant_website}}" class="btn btn-outline-dark">Go to Website</a>
+        {{/each}}
         <a id="restaurantWeblink" href="/search" class="btn btn-outline-dark">Back to Search</a>
-        <h4>Leave a Comment</h4>
-        <form class="card mt-4 text-center col-md-10">
-          <div class="form-group">
-            <label>User Name? </label>
-            <input type="text" class="form-control" id="userName" placeholder="Name">
+        {{!-- see all past comments /review for restaurant --}}
+        <div class="row">
+          <div class="page-header">
+            <h1>Reviews </h1>
           </div>
-          <div class="form-group">
-            <label>Rating</label>
-            <select multiple class="form-control" id="userRating">
-              <option value="1">1 *</option>
-              <option value="2">2 **</option>
-              <option value="3">3 ***</option>
-              <option value="4">4 ****</option>
-              <option value="5">5*****</option>
-            </select>
+        </div>
+        <div class="comments-list">
+
+          {{#each restaurant}} {{#each Comms}}
+          <div class="row">
+            {{!-- <p>
+              {{createdAt}}
+            </p> --}}
+            <h5 class="col-md-1">{{id}}</h5>
+            <p>ideally username- working on it</p>
+            <p class ="col-md-2">Rating: {{rating}}</p>
+            <p>{{comment_text}}</p>
           </div>
-          <div class="form-group">
-            <label id="comment">Leave a Comment</label>
-            <textarea class="form-control" rows="3"></textarea>
-          </div>
-        </form>
+            <hr class="my-4">
+          {{/each}} {{/each}}
+          {{!-- {{#each userObj.user}} 
+          <p>{{user_name}}</p>
+          {{/each}} --}}
+        </div>
       </div>
+
+      {{!-- display all deals for the restaurant from deals table in db--}}
       <div id="dealsDiv">
         <table class="table table-sm">
           <thead>
@@ -62,74 +76,55 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">Monday</th>
-              <td>Food</td>
-              <td>4:00</td>
-              <td>6:00</td>
-              <td>Free food</td>
-            </tr>
-            <tr>
-              <th scope="row">Tuesday</th>
-              <td>Both</td>
-              <td>4:00</td>
-              <td>6:00</td>
-              <td>Free food, free drinks, everyone can have anything they want! so much stuff going on in this deal you dont
-                want to miss it!</td>
-            </tr>
-            <tr>
-              <th scope="row">Wednesday</th>
-              <td>Food</td>
-              <td>4:00</td>
-              <td>6:00</td>
-              <td>Free food</td>
-            </tr>
-            <tr>
-              <th scope="row">Thursday</th>
-              <td>Food</td>
-              <td>4:00</td>
-              <td>6:00</td>
-              <td>Free food</td>
-            </tr>
-            <tr>
-              <th scope="row">Friday</th>
-              <td colspan="4">if deal type null / cannot find day match display no Deal in td w/colspan = "4"</td>
 
-            </tr>
+            {{#each restaurant}} {{#each Deals}} {{#if hasDeal}}
             <tr>
-              <th scope="row">Saturday</th>
-              <td>Drinks</td>
-              <td>4:00</td>
-              <td>6:00</td>
-              <td>All the drinks</td>
-            </tr>
-            <tr>
-              <th scope="row">Sunday</th>
-              <td>Food</td>
-              <td>4:00</td>
-              <td>6:00</td>
-              <td>Free food</td>
+              <th scope="row">{{day}}</th>
+              <td>{{deal_type}}</td>
+              <td>{{start_time}}</td>
+              <td>{{end_time}}</td>
+              <td>{{deal_description}}</td>
+              {{/if}}{{/each}} {{/each}}
             </tr>
           </tbody>
         </table>
       </div>
-      <div id="contactDiv">
-        <h5>phone number maybe (715) 555-4738</h5>
-        <h5>12345 Free Stuff Way</h5>
-        <h5>Drinkland, US</h5>
-        <h5>80938</h5>
+      {{!-- display past comments, add new comment --}}
+      <div id="commentDiv">
+        <form class="card">
+          <div class="form-group">
+            <label id="comment">Leave a Comment</label>
+            <textarea id="commentText" class="form-control" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Rating</label>
+            <select class="form-control" id="rating">
+              <option value="1">1 *</option>
+              <option value="2">2 **</option>
+              <option value="3">3 ***</option>
+              <option value="4">4 ****</option>
+              <option value="5">5 *****</option>
+            </select>
+          </div>
+
+          <button id="addComment" class=" btn btn-sm btn-outline-dark">Post</button>
+        </form>
       </div>
+      {{!-- display contact info from restaurant table in db --}}
+      <div id="contactDiv">
+        {{#each restaurant}}
+        <h5> Phone number:
+          <a href="tel:+1{{phone_number}}">{{phone_number}}</a>
+        </h5>
+        <h5>Address: {{restaurant_address}}
+        </h5>
+        {{/each}}
+      </div>
+      {{!-- display restaurant location on map using google maps api --}}
       <div id="mapDiv">
         <p>map and stuff from google api... could do get call on click of button</p>
       </div>
 
     </div>
+    <div class="col-md-1"></div>
   </div>
-  <div class="col-md-1"></div>
-</div>
-<div class="row">
-
-
-</div>
-
-

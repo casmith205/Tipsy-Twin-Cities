@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 body {
+=======
+/* Background image on all pages */
+body{
+>>>>>>> 56064cc29459bb07957b9727418465f820558614
     background-image: url("https://image.freepik.com/free-photo/wooden-planks-with-blurred-restaurant-background_1253-56.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
+<<<<<<< HEAD
 
 .card {
     background-color: antiquewhite
@@ -11,6 +17,16 @@ body {
 .btn {
     background-color: none;
     color: rgba(112, 76, 34, 0.877);
+=======
+/* card bg color */
+.card{
+    background-color: antiquewhite
+}
+/* all buttons same colors */
+.btn{
+    background-color:  none;
+    color:rgba(112, 76, 34, 0.877);
+>>>>>>> 56064cc29459bb07957b9727418465f820558614
 }
 
 .btn:hover {
@@ -20,8 +36,12 @@ body {
 
 
 /* HOME PAGE STYLING */
+<<<<<<< HEAD
 
 .jumbotron {
+=======
+.jumbotron{
+>>>>>>> 56064cc29459bb07957b9727418465f820558614
     padding: 50px;
     color: white;
     text-align: center;
@@ -52,4 +72,35 @@ a {
 a:hover {
     color: grey;
     text-decoration-line: none;
+}
+
+.homeLinks{
+    font-size: 2em
+}
+
+
+/* SEARCH PAGE FORMATTING */
+.h4{
+    text-align: center;
+}
+.searchForm{
+    background-color: antiquewhite;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* ADD PAGE FORMATTING */
+.form-check-label{
+    margin: 10px;
+    padding-left: 0;
+}
+
+.form-row{
+    width: 60%;
+    margin-bottom: 15px;
+}
+
+label{
+    font-weight: bold;
 }
