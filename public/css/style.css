@@ -1,9 +1,23 @@
+<<<<<<< HEAD
+body {
+=======
 /* Background image on all pages */
 body{
+>>>>>>> 56064cc29459bb07957b9727418465f820558614
     background-image: url("https://image.freepik.com/free-photo/wooden-planks-with-blurred-restaurant-background_1253-56.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
+<<<<<<< HEAD
+
+.card {
+    background-color: antiquewhite
+}
+
+.btn {
+    background-color: none;
+    color: rgba(112, 76, 34, 0.877);
+=======
 /* card bg color */
 .card{
     background-color: antiquewhite
@@ -12,41 +26,50 @@ body{
 .btn{
     background-color:  none;
     color:rgba(112, 76, 34, 0.877);
+>>>>>>> 56064cc29459bb07957b9727418465f820558614
 }
 
-.btn:hover{
-    background-color:rgba(112, 76, 34, 0.61);
-    color: blanchedalmond ;
-    
-
+.btn:hover {
+    background-color: rgba(112, 76, 34, 0.61);
+    color: blanchedalmond;
 }
+
 
 /* HOME PAGE STYLING */
+<<<<<<< HEAD
+
+.jumbotron {
+=======
 .jumbotron{
+>>>>>>> 56064cc29459bb07957b9727418465f820558614
     padding: 50px;
+    color: white;
+    text-align: center;
+    background-image: url("https://www.thedailymeal.com/sites/default/files/styles/hero_image_breakpoints_theme_tdmr_lg_1x/public/slides/6-palmhappyhour-PalmRestaurant_0.jpg?itok=Bddul_aJ&timestamp=1520708000pinimg.com/736x/b6/ca/89/b6ca891a251831ed7f674b34ca53a65f--fall-fest-happy-hour.jpg");
+    background-color: gray;
 }
 
-.display-4{
+
+}
+.display-4 {
     text-align: center;
     padding: 20px;
 }
-.intro{
+.intro {
     padding: 30px;
 }
-.findHH{
+.findHH {
     text-align: center;
 }
-.btn-user{
+.btn-user {
     background: grey;
     color: black;
 }
-
-a{
+a {
     color: black;
     text-decoration-style: none;
 }
-
-a:hover{
+a:hover {
     color: grey;
     text-decoration-line: none;
 }
