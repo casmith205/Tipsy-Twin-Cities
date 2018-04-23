@@ -34,7 +34,6 @@ body {
 
 
 .jumbotron{
-
     padding: 50px;
     color: white;
     text-align: center;
@@ -48,6 +47,7 @@ body {
 
 .intro {
     padding: 30px;
+    font-size: 1.2rem;
 }
 
 .findHH {
@@ -102,4 +102,10 @@ a:hover {
 
 label {
     font-weight: bold;
+}
+
+/* MODAL FORMATTING */
+.modal{
+    color: black;
+    text-align: left;
 }
