@@ -19,7 +19,9 @@ $(function () {
         }).then(
             function (data) {
                 console.log("Searched for the following: ", userInfo);
-                // $("#signedInUser").html(data[0].user_name);
+                localStorage.setItem("user_id", data[0].id);
+                localStorage.setItem("user_name", data[0].user_name);
+                localStorage.setItem("user_verified", data[0].verified);
                 location.reload();
               
             });
@@ -56,4 +58,5 @@ $(function () {
                 location.reload();
             });
     });
+
 });
