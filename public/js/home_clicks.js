@@ -1,5 +1,4 @@
 // Handle the clicks of the "Sign in" button & "Sign Up" button
-var nodemailer = require('nodemailer');
 
 $(function () {
     // Sign In to the website
@@ -53,28 +52,6 @@ $(function () {
         }).then(
             function () {
                 console.log("Added the following: ", userInfo);
-                var transporter = nodemailer.createTransport({
-                    service: 'gmail',
-                    auth: {
-                        user: 'tipsytwincities@gmail.com',
-                        pass: 'cohort3!'
-                    }
-                });
-                
-                var mailOptions = {
-                    from: 'casmith@gmail.com',
-                    to: userInfo.email,
-                    subject: 'Verify your account!',
-                    text: 'Hello! Thanks for signing up with Tipsy Twin Cities. Please click this link to verify your account and start leaving reviews: localhost:8080/api/user/'+userInfo.id
-                };
-        
-                transporter.sendMail(mailOptions, function (error, info) {
-                    if (error) {
-                        console.log(error);
-                    } else {
-                        console.log('Email sent: ' + info.response);
-                    }
-                });
                 // Reload the page to get the updated list
                 location.reload();
             });

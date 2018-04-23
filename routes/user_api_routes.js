@@ -5,6 +5,7 @@ var db = require("../models");
 // Requiring express
 var express = require("express");
 var app = express.Router();
+var sendEmail = require("../verification/email.js")
 
 
 
@@ -29,6 +30,8 @@ module.exports = function (app) {
       last_name: req.body.last_name,
       email: req.body.email,
       password: req.body.password
+    }).then(function (result){
+        sendEmail(result.dataValues.id, result.dataValues.email);
     });
   });
 
