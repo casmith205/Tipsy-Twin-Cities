@@ -5,6 +5,8 @@ var db = require("../models");
 // Requiring express
 var express = require("express");
 var app = express.Router();
+var sendEmail = require("../verification/email.js")
+
 
 
 // Routes
@@ -12,14 +14,14 @@ var app = express.Router();
 module.exports = function (app) {
 
   // GET route for getting all of the users
-  app.get("/api/all", function(req, res) {
-    db.User.findAll({}).then(function(results) {
+  app.get("/api/all", function (req, res) {
+    db.User.findAll({}).then(function (results) {
       res.json(results);
     });
   });
 
   // POST route for saving a user
-  app.post("/api/new_user", function(req, res) {
+  app.post("/api/new_user", function (req, res) {
     console.log("User Data:");
     console.log(req.body);
     db.User.create({
@@ -28,25 +30,32 @@ module.exports = function (app) {
       last_name: req.body.last_name,
       email: req.body.email,
       password: req.body.password
+    }).then(function (result){
+        sendEmail(result.dataValues.id, result.dataValues.email);
     });
   });
+
   // Get a specific user
-  app.get("/api/:user", function(req, res) {
+  app.get("/api/user", function (req, res) {
     db.User.findAll({
       where: {
-        user_name: req.User.user_name
+        email: req.query.email,
+        password: req.query.password
       }
-    }).then(function(results) {
-      res.json(results);
+    }).then(function (result) {
+      var userObj = {
+        users: result
+      }
+      res.json(result);
     });
   });
-  
+
   // PUT route for updating user
-  app.put("/api/user/:id", function (req, res) {
-    db.User.update(req.body,
+  app.put("/api/user_update", function (req, res) {
+    db.User.update({"verified":true},
       {
         where: {
-          id: req.User.id
+          id: req.body.id
         }
       })
       .then(function (result) {

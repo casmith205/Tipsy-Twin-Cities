@@ -14,7 +14,6 @@ module.exports = function (app) {
     //display searchpage on click of search button
     app.get("/search", function (req, res) {
         res.render("search")
-
     })
 
     //display add page on click of add button
@@ -28,7 +27,14 @@ module.exports = function (app) {
                 }
                 res.render("add", restObj);
             });
+    });
+
+    
+    //display searchpage on click of search button
+    app.get("/verified", function (req, res) {
+        res.render("verified")
     })
+
 
     //display specific restaurant data on click of that restuarant
     app.get("/restaurant", function (req, res) {
