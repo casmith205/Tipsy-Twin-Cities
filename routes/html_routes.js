@@ -30,6 +30,7 @@ module.exports = function (app) {
             });
     })
 
+
     //display specific restaurant data on click of that restuarant
     app.get("/restaurant", function (req, res) {
         //eventually /restaurant/id once we have logic for displaying results on search page
