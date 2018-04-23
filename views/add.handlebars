@@ -2,9 +2,9 @@
     <form>
         <div class="form-group mb-2">
             <label class="mr-1">Restaurant: </label>
-            <select id="exsistingRestaurants">
+            <select id="existingRestaurants">
                 {{#each restaurants}}
-                <option class="restaurant" value="{{id}}">{{restaurant_name}}</option>
+                <option class="restaurant" id="chosenRest" value="{{id}}">{{restaurant_name}}</option>
                 {{/each}}
             </select>
         </div>
