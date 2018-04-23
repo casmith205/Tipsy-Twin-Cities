@@ -7,6 +7,7 @@ var express = require("express");
 var app = express.Router();
 
 
+
 // Routes
 // =============================================================
 module.exports = function (app) {
@@ -48,10 +49,10 @@ module.exports = function (app) {
 
   // PUT route for updating user
   app.put("/api/user/:id", function (req, res) {
-    db.User.update(req.body,
+    db.User.update({"verified":true},
       {
         where: {
-          id: req.body.id
+          id: req.params.id
         }
       })
       .then(function (result) {
