@@ -1,23 +1,9 @@
-<<<<<<< HEAD
-body {
-=======
-/* Background image on all pages */
 body{
->>>>>>> 56064cc29459bb07957b9727418465f820558614
     background-image: url("https://image.freepik.com/free-photo/wooden-planks-with-blurred-restaurant-background_1253-56.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
-<<<<<<< HEAD
 
-.card {
-    background-color: antiquewhite
-}
-
-.btn {
-    background-color: none;
-    color: rgba(112, 76, 34, 0.877);
-=======
 /* card bg color */
 .card{
     background-color: antiquewhite
@@ -26,8 +12,8 @@ body{
 .btn{
     background-color:  none;
     color:rgba(112, 76, 34, 0.877);
->>>>>>> 56064cc29459bb07957b9727418465f820558614
 }
+
 
 .btn:hover {
     background-color: rgba(112, 76, 34, 0.61);
@@ -36,12 +22,8 @@ body{
 
 
 /* HOME PAGE STYLING */
-<<<<<<< HEAD
 
-.jumbotron {
-=======
 .jumbotron{
->>>>>>> 56064cc29459bb07957b9727418465f820558614
     padding: 50px;
     color: white;
     text-align: center;
