@@ -2,11 +2,12 @@
 
 
 $(function () {
+    //hide all except initial details div
     $("#dealsDiv").hide()
     $("#contactDiv").hide()
     $("#mapDiv").hide()
     $("#commentDiv").hide()
-
+    //on click details hide other divs
     $("#detailsBtn").on("click", function (event) {
         event.preventDefault()
         $("#detailsDiv").show()
@@ -15,6 +16,7 @@ $(function () {
         $("#mapDiv").hide()
 
     })
+    //on click deals hide other divs
     $("#dealsBtn").on("click", function (event) {
         event.preventDefault()
         console.log("onclick working")
@@ -24,7 +26,7 @@ $(function () {
         $("#commentDiv").hide()
         $("#dealsDiv").show()
     })
-
+    //on click contact hide other divs
     $("#contactBtn").on("click", function (event) {
         event.preventDefault()
         $("#detailsDiv").hide()
@@ -33,7 +35,7 @@ $(function () {
         $("#commentDiv").hide()
         $("#contactDiv").show()
     })
-
+    //on click map button hide other divs AND google api call
     $("#mapBtn").on("click", function (event) {
         event.preventDefault()
         $("#detailsDiv").hide()
@@ -41,9 +43,11 @@ $(function () {
         $("#contactDiv").hide()
         $("#commentDiv").hide()
         $("#mapDiv").show()
-    })
 
-    $("#commentBtn").on("click", function(event){
+        //google GET ajax call using data-address attribute stored in mapBtn
+    })
+    //on click comment hide other divs
+    $("#commentBtn").on("click", function (event) {
         event.preventDefault()
         $("#detailsDiv").hide()
         $("#dealsDiv").hide()
@@ -51,12 +55,12 @@ $(function () {
         $("#mapDiv").hide()
         $("#commentDiv").show()
 
-        
+
     })
-    
+
 
     // On the click of the add comment button.....
-    $("#addComment").on("click", function(event) {
+    $("#addComment").on("click", function (event) {
         // Grab info from the search...
         var commentText = $("#commentText").val();
         var ratingVal = $("#rating").val();
@@ -78,10 +82,10 @@ $(function () {
             type: "POST",
             data: commentInfo
         }).then(
-            function() {
+            function () {
                 console.log("Added a new comment: ", commentInfo);
                 // Reload the page to get the updated list
-                //location.reload();
+                location.reload();
             }
         );
 

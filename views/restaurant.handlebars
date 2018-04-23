@@ -46,12 +46,15 @@
 
           {{#each restaurant}} {{#each Comms}}
           <div class="row">
-            <p>
+            {{!-- <p>
               {{createdAt}}
-            </p>
-            <h4>Rating: {{rating}}</h4>
+            </p> --}}
+            <h5 class="col-md-1">{{id}}</h5>
+            <p>ideally username- working on it</p>
+            <p class ="col-md-2">Rating: {{rating}}</p>
             <p>{{comment_text}}</p>
           </div>
+            <hr class="my-4">
           {{/each}} {{/each}}
           {{!-- {{#each userObj.user}} 
           <p>{{user_name}}</p>

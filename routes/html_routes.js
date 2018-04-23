@@ -1,7 +1,6 @@
 
 //require models
 var db = require("../models")
-var path = require("path");
 
 
 //html routes...
