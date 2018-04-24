@@ -1,10 +1,5 @@
-
 /* Background image on all pages */
-
 body {
-
-
-
     background-image: url("https://image.freepik.com/free-photo/wooden-planks-with-blurred-restaurant-background_1253-56.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,13 +11,13 @@ body {
     background-color: antiquewhite;
     border-radius: 20px;
 }
+
 /* all buttons same colors */
 .btn{
     background-color:  none;
     color:rgba(112, 76, 34, 0.877);
 
 }
-
 
 .btn:hover {
     background-color: rgba(112, 76, 34, 0.61);
@@ -31,8 +26,6 @@ body {
 
 
 /* HOME PAGE STYLING */
-
-
 .jumbotron{
     padding: 50px;
     color: white;
@@ -75,7 +68,6 @@ a:hover {
 
 
 /* SEARCH PAGE FORMATTING */
-
 .h4 {
     text-align: center;
 }
@@ -111,11 +103,12 @@ label {
 }
 
 /* footer styling */
-    .header{
+    .page-footer{
         background: burlywood;
         width: 100%;
         color: rgba(112, 76, 34, 0.61);
       }
+
       #logOut:hover{
           color: blanchedalmond
       }
