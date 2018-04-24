@@ -40,11 +40,17 @@ $(function () {
             $.ajax("/api/deals", {
                 type: "POST",
                 data: dealInfo
-            }).then(
-                function () {
-                    console.log("Added the following deal: ", dealInfo);
-                }
-            );
+            })
+                .then(
+                    function () {
+                        console.log("Added the following deal: ", dealInfo);
+                    }
+                )
+                .fail(
+                    function (err) {
+                        alert(err);
+                    }
+                )
         };
     });
 
@@ -70,11 +76,17 @@ $(function () {
         $.ajax("/api/restaurants", {
             type: "POST",
             data: restInfo
-        }).then(
-            function () {
-                console.log("Added the following restaurant: ", restInfo);
-                // Reload the page to get the updated list
-                location.reload();
-            });
+        })
+            .then(
+                function () {
+                    console.log("Added the following restaurant: ", restInfo);
+                    // Reload the page to get the updated list
+                    location.reload();
+                })
+            .fail(
+                function (err) {
+                    alert(err);
+                }
+            )
     });
 });
