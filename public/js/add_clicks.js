@@ -4,6 +4,7 @@ $(function () {
     // ADD NEW DEAL
     $("#submitBtnDeal").on("click", function (event) {
         event.preventDefault();
+        console.log("add deal click")
         // Grab info from the search...
         var restaurant_id = $("#existingRestaurants").val();
         var dealDesc = $("#newDealDesc").val();
@@ -41,13 +42,14 @@ $(function () {
                 type: "POST",
                 data: dealInfo
             })
-                .then(
-                    function () {
+                .done(
+                    function (data) {
                         console.log("Added the following deal: ", dealInfo);
                     }
                 )
                 .fail(
                     function (err) {
+                        console.log(err)
                         alert(err);
                     }
                 )
