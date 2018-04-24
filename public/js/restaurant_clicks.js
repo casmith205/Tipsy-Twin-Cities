@@ -65,9 +65,9 @@ $(function () {
         // Grab info from the search...
         var commentText = $("#commentText").val();
         var ratingVal = $("#rating").val();
+        var restID = $(this).attr("restaurant-id")
         // ***Need to get USER ID and RESTAURANT ID
         var userID = 2
-        var restID = 1
 
         // Set the information that we want to send to the API....
         var commentInfo = {

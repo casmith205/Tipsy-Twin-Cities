@@ -20,22 +20,22 @@ module.exports = function (app) {
             });
     });
 
-    // // GET route for getting CERTAIN restaurants
-    // // ****NEED TO EDIT THIS TO CORRESPOND TO FORM******
-    // app.get("/restaurants/search", function (req, res) {
-    //     db.Restaurant.findAll({
-    //         include: [db.Deal],
-    //         where: {
-    //             id: req.params.id
-    //         },
-    //     })
-    //         .then(function (result) {
-    //             var restObj = {
-    //                 restaurants: result
-    //             }
-    //             res.render("restaurant", restObj);
-    //         });
-    // });
+    // GET route for getting CERTAIN restaurants
+    // ****NEED TO EDIT THIS TO CORRESPOND TO FORM******
+    app.get("/api/restaurants/search", function (req, res) {
+        db.Restaurant.findAll({
+            include: [db.Deal],
+            where: {
+                id: req.params.id
+            },
+        })
+            .then(function (result) {
+                var restObj = {
+                    restaurants: result
+                }
+                res.render("restaurant", restObj);
+            });
+    });
 
     // POST route for saving a new restaurant
     app.post("/api/restaurants", function (req, res) {
@@ -51,19 +51,8 @@ module.exports = function (app) {
             });
     });
 
-    // DELETE route for deleting restaurants
-    //   app.delete("/api/restaurants/:id", function(req, res) {
-    //     db.Restaurant.destroy({
-    //       where: {
-    //         id: req.params.id
-    //       }
-    //     })
-    //       .then(function(result) {
-    //         res.json(result);
-    //       });
-    //   });
 
-    // PUT route for updating burgers
+    // PUT route for updating restaurants
     app.put("/api/restaurants/:id", function (req, res) {
         db.Restaurant.update(req.body,
             {
