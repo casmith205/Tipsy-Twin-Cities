@@ -2,8 +2,8 @@
 
 
 $(function () {
-    
-    
+
+
     //hide all except initial details div
     $("#dealsDiv").hide()
     $("#contactDiv").hide()
@@ -47,7 +47,7 @@ $(function () {
         $("#mapDiv").show()
 
         //google GET ajax call using data-address attribute stored in mapBtn
-        
+
     })
     //on click comment hide other divs
     $("#commentBtn").on("click", function (event) {
@@ -86,17 +86,23 @@ $(function () {
         $.ajax("/api/comments", {
             type: "POST",
             data: commentInfo
-        }).then(
-            function () {
+        }).done(
+            function (data) {
                 console.log("Added a new comment: ", commentInfo);
                 // Reload the page to get the updated list
                 location.reload();
             }
-        );
+        ).fail(function (err) {
+            console.log("err", err)
+            var errArray = err.responseJSON.errors
+            for (var i = 0; i < errArray.length; i++) {
+                console.log(errArray[i])
+                alert(errArray[i].message)
 
-    });
+
+            }
 
 
-
-
+        });
+    })
 });
