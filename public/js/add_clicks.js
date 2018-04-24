@@ -84,7 +84,7 @@ $(function () {
                 function (data) {
                     console.log("Response form database: ", data);
                     // Reload the page to get the updated list
-                    // location.reload();
+                    location.reload();
                 })
             .fail(
                 function (err) {
