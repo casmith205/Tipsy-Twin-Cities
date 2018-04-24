@@ -3,6 +3,7 @@ module.exports = function (sequelize, DataTypes) {
     restaurant_name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
       validate: {
         notEmpty: { msg: "Restaurant name cannot be empty!" }
       }
@@ -16,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
         isNumeric: true
       }
     },
-    
+
     restaurant_website: {
       type: DataTypes.STRING,
       validate: {
@@ -24,7 +25,8 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     restaurant_address: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      unique: true
     }
   });
 
