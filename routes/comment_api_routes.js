@@ -9,8 +9,12 @@ module.exports = function (app) {
     //post comments
     app.post("/api/comments", function (req, res) {
         console.log("request body: ", req.body)
-        db.Comm.create(req.body).then(function (commData) {
+        db.Comm.create(req.body)
+        .then(function (commData) {
             res.json(commData)
+        })
+        .catch(function(err){
+            res.status(500).send(err)
         })
 
     })
