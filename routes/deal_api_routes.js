@@ -60,7 +60,8 @@ module.exports = function (app) {
             RestaurantId: req.body.RestaurantId
         })
             .then(function (result) {
-                res.json(result);
+                // res.json(result);
+                res.status(200).end()
             })
             .catch(function (err) {
                 res.status(500).send(err);

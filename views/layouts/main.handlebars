@@ -21,23 +21,20 @@
 </head>
 
 <body>
-
-	<header class=" header justify-content-between">
+	<div class="container mx-auto">
+		{{{ body }}}
+	</div>
+	<footer class="page-footer font-small pt-2 mt-4">
 		<div class="container">
-			<div class="row ">
-				<p class="align-middle font-weight-light">Logged in as :
-					<span class="align-middle" id="signedInUser"></span>
+			<div class="row mx-auto logOutRow">
+				<p class="font-weight-light">Logged in as :
+					<span id="signedInUser"></span>
 				</p>
-				<span class="align-middle" id="logOut">LOG OUT</span>
+				<span id="logOut">LOG OUT</span>
 			</div>
 		</div>
 
-	</header>
-	<div class="container mx-auto">
-		{{{ body }}}
-
-	</div>
-
+	</footer>
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"

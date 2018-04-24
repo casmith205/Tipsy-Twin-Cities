@@ -31,7 +31,10 @@ $(function () {
                 })
             .fail(
                 function (err) {
-                    alert(err);
+                    var errArray = err.responseJSON.errors
+                    for (var i = 0; i < errArray.length; i++) {
+                        alert(errArray[i].message)
+                    }
                 }
             )
     });
@@ -70,7 +73,26 @@ $(function () {
                 })
             .fail(
                 function (err) {
-                    alert(err);
+                    // console.log("err",err)
+                    // console.log("err message?", err.responseJSON)
+                    var errArray = err.responseJSON.errors
+                    console.log(errArray)
+                    for (var i = 0; i < errArray.length; i++) {
+                        console.log(errArray[i])
+                        alert(errArray[i].message)
+
+
+                    }
+
+                    // alert(err.user_name); undefined
+                    // alert(err.User) undefined
+                    // alert(JSON.stringify(err)); buncha text
+                    // alert(err.errors); undefined
+                    // alert(err.errors[0]);
+
+
+
+
                 }
             )
     });

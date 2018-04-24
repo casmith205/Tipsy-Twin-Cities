@@ -12,12 +12,14 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.TEXT
     },
     phone_number: {
-      type:DataTypes.INTEGER,
+      type: DataTypes.STRING,
       validate: {
-        isNumeric: true
+        len: {
+          args: [10, 10],
+          msg: "Phone number must be 10 digits."
+        }
       }
     },
-
     restaurant_website: {
       type: DataTypes.STRING,
       validate: {
@@ -26,7 +28,10 @@ module.exports = function (sequelize, DataTypes) {
     },
     restaurant_address: {
       type: DataTypes.STRING,
-      unique: true
+      unique: true,
+      validate: {
+        notEmpty: { msg: "Address name cannot be empty!" }
+      }
     }
   });
 
