@@ -16,6 +16,7 @@ module.exports = function (sequelize, DataTypes) {
         isNumeric: true
       }
     },
+    
     restaurant_website: {
       type: DataTypes.STRING,
       validate: {
