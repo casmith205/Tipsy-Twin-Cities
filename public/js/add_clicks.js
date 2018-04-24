@@ -4,6 +4,7 @@ $(function () {
     // ADD NEW DEAL
     $("#submitBtnDeal").on("click", function (event) {
         event.preventDefault();
+        console.log("add deal click")
         // Grab info from the search...
         var restaurant_id = $("#existingRestaurants").val();
         var dealDesc = $("#newDealDesc").val();
@@ -41,13 +42,14 @@ $(function () {
                 type: "POST",
                 data: dealInfo
             })
-                .then(
-                    function () {
+                .done(
+                    function (data) {
                         console.log("Added the following deal: ", dealInfo);
                     }
                 )
                 .fail(
                     function (err) {
+                        console.log(err)
                         alert(err);
                     }
                 )
@@ -60,7 +62,7 @@ $(function () {
         // Grab info from the search...
         var restName = $("#newRestName").val().trim();
         var restDesc = $("#newRestDescr").val().trim();
-        var restPhone = $("#newRestPhone").val();
+        var restPhone = $("#newRestPhone").val().trim();
         var restWebsite = $("#newRestWeb").val().trim();
         var restAddress = $("#newRestAddress").val().trim();
 
@@ -72,20 +74,30 @@ $(function () {
             phone_number: restPhone,
             address: restAddress
         };
-        console.log(restInfo);
+        console.log("******************")
+        console.log(typeof restInfo.phone_number);
         $.ajax("/api/restaurants", {
             type: "POST",
             data: restInfo
         })
             .then(
-                function () {
-                    console.log("Added the following restaurant: ", restInfo);
+                function (data) {
+                    console.log("Response form database: ", data);
                     // Reload the page to get the updated list
                     location.reload();
                 })
             .fail(
                 function (err) {
-                    alert(err);
+                     console.log("err",err)
+                    // console.log("err message?", err.responseJSON)
+                    var errArray = err.responseJSON.errors
+                    console.log(errArray)
+                    for (var i = 0; i < errArray.length; i++) {
+                        console.log(errArray[i])
+                        alert(errArray[i].message)
+
+
+                    }
                 }
             )
     });
