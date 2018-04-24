@@ -88,7 +88,16 @@ $(function () {
                 })
             .fail(
                 function (err) {
-                    alert(err);
+                     console.log("err",err)
+                    // console.log("err message?", err.responseJSON)
+                    var errArray = err.responseJSON.errors
+                    console.log(errArray)
+                    for (var i = 0; i < errArray.length; i++) {
+                        console.log(errArray[i])
+                        alert(errArray[i].message)
+
+
+                    }
                 }
             )
     });

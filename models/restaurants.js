@@ -28,7 +28,10 @@ module.exports = function (sequelize, DataTypes) {
     },
     restaurant_address: {
       type: DataTypes.STRING,
-      unique: true
+      unique: true,
+      validate: {
+        notEmpty: { msg: "Address name cannot be empty!" }
+      }
     }
   });
 
