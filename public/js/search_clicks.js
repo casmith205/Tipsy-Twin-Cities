@@ -1,11 +1,8 @@
 // Handle the clicks of the "submit" button on the form 
 // and the click of the restaurants that show up on submit
-$(document).ready(function () {
-    var currentuser = localStorage.getItem("user_name");
-    $("#signedInUser").append(currentuser);
-});
 
 $(function () {
+    
     // On the click of the submit button of the form... 
     $("#submitBtn").on("click", function (event) {
         event.preventDefault();

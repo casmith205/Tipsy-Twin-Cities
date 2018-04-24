@@ -2,6 +2,8 @@
 
 
 $(function () {
+    
+    
     //hide all except initial details div
     $("#dealsDiv").hide()
     $("#contactDiv").hide()
@@ -67,7 +69,9 @@ $(function () {
         var ratingVal = $("#rating").val();
         var restID = $(this).attr("restaurant-id")
         // ***Need to get USER ID and RESTAURANT ID
-        var userID = 2
+        var userID = localStorage.getItem("user_id");
+        console.log(userID)
+
 
         // Set the information that we want to send to the API....
         var commentInfo = {

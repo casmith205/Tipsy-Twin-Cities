@@ -109,3 +109,13 @@ label {
     color: black;
     text-align: left;
 }
+
+/* footer styling */
+    .header{
+        background: burlywood;
+        width: 100%;
+        color: rgba(112, 76, 34, 0.61);
+      }
+      #logOut:hover{
+          color: blanchedalmond
+      }
