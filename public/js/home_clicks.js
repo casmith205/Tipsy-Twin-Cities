@@ -31,8 +31,7 @@ $(function () {
                 })
             .fail(
                 function (err) {
-                    console.log(err);
-                    alert(err.responseJSON);
+                    alert(err);
                 }
             )
     });
@@ -71,8 +70,7 @@ $(function () {
                 })
             .fail(
                 function (err) {
-                    console.log("hi");
-                    alert(err.message);
+                    alert(err);
                 }
             )
     });
