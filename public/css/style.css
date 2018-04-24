@@ -1,130 +1,93 @@
 /* Background image on all pages */
-
 body {
     background-image: url("https://image.freepik.com/free-photo/wooden-planks-with-blurred-restaurant-background_1253-56.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-
 /* card bg color */
-
-.card {
-    background-color: antiquewhite;
+.card{
+    background-color: white;
     border-radius: 20px;
+    border-color: blanchedalmond;
 }
-
-
 /* all buttons same colors */
-
-.btn {
-    background-color: none;
-    color: rgba(112, 76, 34, 0.877);
+.btn{
+    background-color:  none;
+    color:rgba(112, 76, 34, 0.877);
 }
-
 .btn:hover {
     background-color: rgba(112, 76, 34, 0.61);
     color: blanchedalmond;
 }
-
-
 /* HOME PAGE STYLING */
-
-.jumbotron {
+.jumbotron{
     padding: 50px;
-    color: white;
+    color: burlywood;
     text-align: center;
-    background-color: burlywood;
+    background-color: white;
 }
-
 .display-4 {
     text-align: center;
     padding: 20px;
 }
-
 .intro {
     padding: 30px;
     font-size: 1.2rem;
 }
-
 .findHH {
     text-align: center;
 }
-
 .btn-user {
     background: grey;
     color: black;
 }
-
 a {
     color: black;
     text-decoration-style: none;
 }
-
 a:hover {
     color: grey;
     text-decoration-line: none;
 }
-
 .homeLinks {
     font-size: 2em
 }
-
-
 /* SEARCH PAGE FORMATTING */
-
 .h4 {
     text-align: center;
 }
-
 .searchForm {
-    background-color: antiquewhite;
+    background-color: white;
     border-radius: 20px;
-    padding: 50px;
+    padding: 20px;
     margin-top: 50px;
 }
-
-
 /* ADD PAGE FORMATTING */
-
 .form-check-label {
     margin: 10px;
     padding-left: 0;
 }
-
 .form-row {
     width: 60%;
     margin-bottom: 15px;
 }
-
 label {
     font-weight: bold;
 }
-
-
 /* MODAL FORMATTING */
-
-.modal {
+.modal{
     color: black;
     text-align: left;
 }
-
-/* FOOTER STYLING*/
+/* footer styling */
     .page-footer{
         background: burlywood;
         width: 100%;
         color: rgba(112, 76, 34, 0.61);
       }
-
       #logOut:hover{
           color: blanchedalmond
       }
-
-      #logOut{
-          align-items: center;
-      }
-
-/* LOGO STYLING */
       #logo {
           height: 200px;
       }
@@ -133,5 +96,3 @@ label {
           display: block;
          margin: 0 auto;
       }
-    
-
