@@ -12,12 +12,11 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.TEXT
     },
     phone_number: {
-      type:DataTypes.INTEGER,
-      validate: {
-        isNumeric: true
-      }
+      type:DataTypes.STRING,
+      // validate: {
+      //   isNumeric: true
+      // }
     },
-
     restaurant_website: {
       type: DataTypes.STRING,
       validate: {

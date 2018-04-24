@@ -47,6 +47,7 @@ module.exports = function (app) {
             restaurant_address: req.body.address
         })
             .then(function (result) {
+                console.log(result);
                 res.json(result);
             });
     });
