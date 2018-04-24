@@ -48,6 +48,8 @@ module.exports = function (app) {
             .then(function (result) {
                 console.log(result);
                 res.json(result);
+            }).catch(function(err){
+                res.status(500).send(err)
             });
     });
 
