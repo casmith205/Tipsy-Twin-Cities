@@ -2,19 +2,31 @@ module.exports = function(sequelize, DataTypes) {
     var Deal = sequelize.define("Deal", {
       deal_description: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+          notEmpty: { msg: "Deal description cannot be empty!" }
+        }
       },
       day: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+          notEmpty: { msg: "Day cannot be empty!" }
+        }
       },
       start_time: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        validate: {
+          notEmpty: { msg: "Start time cannot be empty!" }
+        }
       },
       end_time: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        validate: {
+          notEmpty: { msg: "End time cannot be empty!" }
+        }
       },
       restrictions: {
         type: DataTypes.TEXT

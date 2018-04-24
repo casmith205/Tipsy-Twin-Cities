@@ -17,7 +17,7 @@ $(function () {
             type: "GET",
             data: userInfo
         })
-            .then(
+            .done(
                 function (data) {
                     console.log("Searched for the following: ", userInfo);
                     localStorage.setItem("user_id", data[0].id);
@@ -27,7 +27,8 @@ $(function () {
                 })
             .fail(
                 function (err) {
-                    alert(err);
+                    console.log(err);
+                    alert(err.responseJSON);
                 }
             )
     });
@@ -36,11 +37,11 @@ $(function () {
     $(".btn-signUp").on("click", function (event) {
         event.preventDefault();
         // Grab info from the sign up form...
-        var user_name = $("#userName").val();
-        var first_name = $("#firstName").val();
-        var last_name = $("#lastName").val();
+        var user_name = $("#userName").val().trim();
+        var first_name = $("#firstName").val().trim();
+        var last_name = $("#lastName").val().trim();
         var email = $("#emailAddressNew").val();
-        var password = $("#pwNew").val();
+        var password = $("#pwNew").val().trim();
 
 
         // Set the information that we want to send to the API....
@@ -55,8 +56,8 @@ $(function () {
             type: "POST",
             data: userInfo
         })
-            .then(
-                function () {
+            .done(
+                function (data) {
                     console.log("Added the following: ", userInfo);
                     localStorage.setItem("user_id", data[0].id);
                     localStorage.setItem("user_name", data[0].user_name);
@@ -66,7 +67,8 @@ $(function () {
                 })
             .fail(
                 function (err) {
-                    alert(err);
+                    console.log("hi");
+                    alert(err.message);
                 }
             )
     });

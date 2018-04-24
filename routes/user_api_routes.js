@@ -10,8 +10,6 @@ module.exports = function (app) {
 
   // POST route for saving a new user to the db
   app.post("/api/new_user", function (req, res) {
-    console.log("User Data:");
-    console.log(req.body);
     db.User.create({
       user_name: req.body.user_name,
       first_name: req.body.first_name,
@@ -20,10 +18,11 @@ module.exports = function (app) {
       password: req.body.password
     })
       .then(function (result) {
+
         sendEmail(result.dataValues.id, result.dataValues.email);
       })
       .catch(function (err) {
-        res.json(err);
+        res.status(500).send(err);
       })
   });
 
@@ -42,7 +41,7 @@ module.exports = function (app) {
         res.json(result);
       })
       .catch(function (err) {
-        res.json(err);
+        res.status(500).send(err);
       })
   });
 
@@ -58,7 +57,7 @@ module.exports = function (app) {
         res.json(result);
       })
       .catch(function (err) {
-        res.json(err);
+        res.status(500).send(err);
       })
   });
 };
