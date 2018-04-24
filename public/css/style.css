@@ -5,6 +5,7 @@ body {
     background-size: cover;
 }
 /* card bg color */
+
 .card{
     background-color: white;
     border-radius: 20px;
@@ -79,7 +80,8 @@ label {
     color: black;
     text-align: left;
 }
-/* footer styling */
+
+/* FOOTER STYLING*/
     .page-footer{
         background: burlywood;
         width: 100%;
@@ -95,4 +97,6 @@ label {
           height: 200px;
           display: block;
          margin: 0 auto;
+
       }
+
