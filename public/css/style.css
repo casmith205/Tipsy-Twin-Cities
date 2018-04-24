@@ -1,4 +1,5 @@
 /* Background image on all pages */
+
 body {
     background-image: url("https://image.freepik.com/free-photo/wooden-planks-with-blurred-restaurant-background_1253-56.jpg");
     background-repeat: no-repeat;
@@ -7,17 +8,18 @@ body {
 
 
 /* card bg color */
-.card{
-    background-color: white;
+
+.card {
+    background-color: antiquewhite;
     border-radius: 20px;
-    border-color: blanchedalmond;
 }
 
-/* all buttons same colors */
-.btn{
-    background-color:  none;
-    color:rgba(112, 76, 34, 0.877);
 
+/* all buttons same colors */
+
+.btn {
+    background-color: none;
+    color: rgba(112, 76, 34, 0.877);
 }
 
 .btn:hover {
@@ -27,11 +29,12 @@ body {
 
 
 /* HOME PAGE STYLING */
-.jumbotron{
+
+.jumbotron {
     padding: 50px;
-    color: burlywood;
+    color: white;
     text-align: center;
-    background-color: white;
+    background-color: burlywood;
 }
 
 .display-4 {
@@ -69,14 +72,15 @@ a:hover {
 
 
 /* SEARCH PAGE FORMATTING */
+
 .h4 {
     text-align: center;
 }
 
 .searchForm {
-    background-color: white;
+    background-color: antiquewhite;
     border-radius: 20px;
-    padding: 20px;
+    padding: 50px;
     margin-top: 50px;
 }
 
@@ -97,8 +101,10 @@ label {
     font-weight: bold;
 }
 
+
 /* MODAL FORMATTING */
-.modal{
+
+.modal {
     color: black;
     text-align: left;
 }
@@ -128,3 +134,4 @@ label {
          margin: 0 auto;
       }
     
+
