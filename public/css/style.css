@@ -103,7 +103,7 @@ label {
     text-align: left;
 }
 
-/* footer styling */
+/* FOOTER STYLING*/
     .page-footer{
         background: burlywood;
         width: 100%;
@@ -113,6 +113,12 @@ label {
       #logOut:hover{
           color: blanchedalmond
       }
+
+      #logOut{
+          align-items: center;
+      }
+
+/* LOGO STYLING */
       #logo {
           height: 200px;
       }
