@@ -109,15 +109,29 @@ label {
     text-align: left;
 }
 
+/* FOOTER STYLING*/
+    .page-footer{
+        background: burlywood;
+        width: 100%;
+        color: rgba(112, 76, 34, 0.61);
+      }
 
-/* footer styling */
+      #logOut:hover{
+          color: blanchedalmond
+      }
 
-.page-footer {
-    background: burlywood;
-    width: 100%;
-    color: rgba(112, 76, 34, 0.61);
-}
+      #logOut{
+          align-items: center;
+      }
 
-#logOut:hover {
-    color: blanchedalmond
-}
+/* LOGO STYLING */
+      #logo {
+          height: 200px;
+      }
+      .log {
+          height: 200px;
+          display: block;
+         margin: 0 auto;
+      }
+    
+
