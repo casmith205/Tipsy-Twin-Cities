@@ -60,7 +60,7 @@ $(function () {
         // Grab info from the search...
         var restName = $("#newRestName").val().trim();
         var restDesc = $("#newRestDescr").val().trim();
-        var restPhone = $("#newRestPhone").val();
+        var restPhone = $("#newRestPhone").val().trim();
         var restWebsite = $("#newRestWeb").val().trim();
         var restAddress = $("#newRestAddress").val().trim();
 
@@ -72,16 +72,17 @@ $(function () {
             phone_number: restPhone,
             address: restAddress
         };
-        console.log(restInfo);
+        console.log("******************")
+        console.log(typeof restInfo.phone_number);
         $.ajax("/api/restaurants", {
             type: "POST",
             data: restInfo
         })
             .then(
-                function () {
-                    console.log("Added the following restaurant: ", restInfo);
+                function (data) {
+                    console.log("Response form database: ", data);
                     // Reload the page to get the updated list
-                    location.reload();
+                    // location.reload();
                 })
             .fail(
                 function (err) {
