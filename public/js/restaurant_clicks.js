@@ -46,9 +46,34 @@ $(function () {
         $("#commentDiv").hide()
         $("#mapDiv").show()
 
+        var options = { method: 'GET',
+        url: 'https://maps.googleapis.com/maps/api/staticmap',
+        qs: 
+        { center: restaurant_address,
+            zoom: '13',
+            size: '512x512',
+            maptype: 'roadmap\\%0A',
+            markers: 'size:mid%7Ccolor:red%7C'+restaurant_address+'+' }};
+            
+
+        request(options, function (error, response, body) {
+        if (error) throw new Error(error)
+    console.log(body);
+    });
+    var res_map= $("<div>");
+        map.addClass("mapStyle");
+        wellSection.attr("id", "mapPng");
+    });
+
+        
+    
+
+
+
+
         //google GET ajax call using data-address attribute stored in mapBtn
         
-    })
+    
     //on click comment hide other divs
     $("#commentBtn").on("click", function (event) {
         event.preventDefault()
