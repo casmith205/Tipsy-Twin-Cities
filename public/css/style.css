@@ -8,8 +8,9 @@ body {
 
 /* card bg color */
 .card{
-    background-color: antiquewhite;
+    background-color: white;
     border-radius: 20px;
+    border-color: blanchedalmond;
 }
 
 /* all buttons same colors */
@@ -28,9 +29,9 @@ body {
 /* HOME PAGE STYLING */
 .jumbotron{
     padding: 50px;
-    color: white;
+    color: burlywood;
     text-align: center;
-    background-color: burlywood;
+    background-color: white;
 }
 
 .display-4 {
@@ -73,7 +74,7 @@ a:hover {
 }
 
 .searchForm {
-    background-color: antiquewhite;
+    background-color: white;
     border-radius: 20px;
     padding: 20px;
     margin-top: 50px;
@@ -112,3 +113,12 @@ label {
       #logOut:hover{
           color: blanchedalmond
       }
+      #logo {
+          height: 200px;
+      }
+      .log {
+          height: 200px;
+          display: block;
+         margin: 0 auto;
+      }
+    

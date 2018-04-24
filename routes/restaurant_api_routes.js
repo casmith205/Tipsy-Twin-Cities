@@ -46,7 +46,6 @@ module.exports = function (app) {
             restaurant_address: req.body.address
         })
             .then(function (result) {
-                console.log(result);
                 res.json(result);
             }).catch(function(err){
                 res.status(500).send(err)

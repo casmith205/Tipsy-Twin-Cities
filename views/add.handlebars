@@ -1,15 +1,20 @@
 <div class="searchForm">
     <form>
+            <img src="./images/tipsy.jpg" class="log">
+
         <div class="form-group mb-2">
             <label class="mr-1">Restaurant: </label>
+            
             <select id="existingRestaurants">
+                
                 {{#each restaurants}}
                 <option class="restaurant" id="chosenRest" value="{{id}}">{{restaurant_name}}</option>
                 {{/each}}
             </select>
+            
         </div>
         <!-- Button trigger modal -->
-        <button type="button" id="addRestModal" class="btn btn-user" data-toggle="modal" data-target="#addRestaurant">
+      <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#addRestaurant"><i class="material-icons">restaurant_menu</i>
             Add a new restaurant...
         </button>
 
@@ -177,6 +182,9 @@
             <label for="newDealRestrictions">Any restrictions?</label>
             <input type="text" class="form-control" id="newDealRestrictions" placeholder="Ex. No coupons/groupons/etc.">
         </div>
-        <button type="Submit" id="submitBtnDeal" class="btn btn-primary btn-lg">Submit</button>
+              <button type="submit" class="btn btn-outline-dark" data-toggle="modal" data-target="#userSignIn"><i class="material-icons">restaurant_menu</i>
+                Submit
+                </button>
+        {{!-- <button type="Submit" id="submitBtnDeal" class="btn btn-primary btn-lg">Submit</button> --}}
     </form>
 </div>
