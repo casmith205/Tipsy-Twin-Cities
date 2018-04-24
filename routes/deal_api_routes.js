@@ -17,7 +17,10 @@ module.exports = function (app) {
                     deals: result
                 }
                 res.render("restaurant", dealObj);
-            });
+            })
+            .catch(function (err) {
+                res.status(500).send(err);
+            })
     });
 
     // GET route for getting CERTAIN deals
@@ -35,13 +38,17 @@ module.exports = function (app) {
                     $gte: req.query.start_time
                 }
             }
-            
-        }).then(function (results) {
+
+        })
+            .then(function (results) {
                 res.json(results)
-            });
+            })
+            .catch(function (err) {
+                res.status(500).send(err);
+            })
     });
 
-    // POST route for saving a new restaurant
+    // POST route for saving a new deal
     app.post("/api/deals", function (req, res) {
         db.Deal.create({
             deal_description: req.body.deal_description,
@@ -54,22 +61,13 @@ module.exports = function (app) {
         })
             .then(function (result) {
                 res.json(result);
-            });
+            })
+            .catch(function (err) {
+                res.status(500).send(err);
+            })
     });
 
-    // DELETE route for deleting restaurants
-    //   app.delete("/api/restaurants/:id", function(req, res) {
-    //     db.Restaurant.destroy({
-    //       where: {
-    //         id: req.params.id
-    //       }
-    //     })
-    //       .then(function(result) {
-    //         res.json(result);
-    //       });
-    //   });
-
-    // PUT route for updating burgers
+    // PUT route for updating deals
     app.put("/api/deals/:id", function (req, res) {
         db.Deal.update(req.body,
             {
@@ -79,6 +77,9 @@ module.exports = function (app) {
             })
             .then(function (result) {
                 res.json(result);
-            });
+            })
+            .catch(function (err) {
+                res.status(500).send(err);
+            })
     });
 };

@@ -2,7 +2,10 @@ module.exports = function (sequelize, DataTypes) {
   var Restaurant = sequelize.define("Restaurant", {
     restaurant_name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: { msg: "Restaurant name cannot be empty!" }
+      }
     },
     description: {
       type: DataTypes.TEXT
