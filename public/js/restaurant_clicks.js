@@ -2,6 +2,8 @@
 
 
 $(function () {
+    
+    
     //hide all except initial details div
     $("#dealsDiv").hide()
     $("#contactDiv").hide()

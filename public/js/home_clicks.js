@@ -1,6 +1,10 @@
 // Handle the clicks of the "Sign in" button & "Sign Up" button
 
 $(function () {
+    //display username of who is logged in 
+    var currentuser = localStorage.getItem("user_name");
+    $("#signedInUser").append(currentuser);
+
     // Sign In to the website
     $(".btn-signIn").on("click", function (event) {
         event.preventDefault();
@@ -59,7 +63,13 @@ $(function () {
                 location.reload();
             });
     });
-
+    // log out
+    $("#logOut").on("click", function (event) {
+        event.preventDefault()
+        localStorage.clear()
+        location.reload()
+        //add alert perhpas?
+    })
 });
 
 
