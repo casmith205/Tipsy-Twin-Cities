@@ -38,6 +38,14 @@ module.exports = function(sequelize, DataTypes) {
           args: [['Food', 'Drink', 'Both']],
           msg: "Must be Food, Drink, or Both"
         }
+      },
+      verified: {
+        type:DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      flagged: {
+        type:DataTypes.BOOLEAN,
+        defaultValue: false
       }
     });
   
