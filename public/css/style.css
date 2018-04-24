@@ -10,8 +10,9 @@ body {
 /* card bg color */
 
 .card {
-    background-color: antiquewhite;
+    background-color: white;
     border-radius: 20px;
+    border-color: blanchedalmond;
 }
 
 
@@ -32,9 +33,9 @@ body {
 
 .jumbotron {
     padding: 50px;
-    color: white;
+    color: burlywood;
     text-align: center;
-    background-color: burlywood;
+    background-color: white;
 }
 
 .display-4 {
@@ -78,9 +79,9 @@ a:hover {
 }
 
 .searchForm {
-    background-color: antiquewhite;
+    background-color: white;
     border-radius: 20px;
-    padding: 50px;
+    padding: 20px;
     margin-top: 50px;
 }
 
@@ -109,6 +110,32 @@ label {
     text-align: left;
 }
 
+<<<<<<< HEAD
+
+/* footer styling */
+
+.page-footer {
+    background: burlywood;
+    width: 100%;
+    color: rgba(112, 76, 34, 0.61);
+}
+
+#logOut:hover {
+    color: blanchedalmond
+}
+
+#logo {
+    height: 200px;
+}
+
+.log {
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+Add CommentCollapse
+=======
 /* FOOTER STYLING*/
     .page-footer{
         background: burlywood;
@@ -135,3 +162,4 @@ label {
       }
     
 
+>>>>>>> 2c7cf17094abeeb84c5570efc7e9e6b7465c0b88
