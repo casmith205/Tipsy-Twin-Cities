@@ -1,9 +1,10 @@
-
-//require models
+// Dependencies
+// =============================================================
+// Requiring our model
 var db = require("../models")
 
-
-//html routes...
+// Routes
+// =============================================================
 module.exports = function (app) {
 
     //display home page on inital load

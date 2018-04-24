@@ -1,7 +1,10 @@
-//dependencies... require models
+// Dependencies
+// =============================================================
+// Requiring our model
 var db = require("../models")
 
-//routes
+// Routes
+// =============================================================
 module.exports = function (app) {
     //post comments
     app.post("/api/comments", function (req, res) {
