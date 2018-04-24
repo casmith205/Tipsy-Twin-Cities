@@ -2,7 +2,10 @@ module.exports = function (sequelize, DataTypes) {
   var Comm = sequelize.define("Comm", {
     comment_text: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        notEmpty: { msg: "Comment cannot be empty!" }
+      }
     },
     rating: {
       type: DataTypes.STRING,
