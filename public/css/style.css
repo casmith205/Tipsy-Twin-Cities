@@ -110,6 +110,7 @@ label {
     text-align: left;
 }
 
+<<<<<<< HEAD
 
 /* footer styling */
 
@@ -134,3 +135,31 @@ label {
 }
 
 Add CommentCollapse
+=======
+/* FOOTER STYLING*/
+    .page-footer{
+        background: burlywood;
+        width: 100%;
+        color: rgba(112, 76, 34, 0.61);
+      }
+
+      #logOut:hover{
+          color: blanchedalmond
+      }
+
+      #logOut{
+          align-items: center;
+      }
+
+/* LOGO STYLING */
+      #logo {
+          height: 200px;
+      }
+      .log {
+          height: 200px;
+          display: block;
+         margin: 0 auto;
+      }
+    
+
+>>>>>>> 2c7cf17094abeeb84c5570efc7e9e6b7465c0b88
