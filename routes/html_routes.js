@@ -99,15 +99,6 @@ module.exports = function (app) {
                 // }
             }
 
-            // console.log(restaurantObj.restaurant[0].dataValues.Comms.User)
-            console.log(restaurantObj.restaurant[0].dataValues.Comms[0])
-            console.log("____________________________user?")
-            console.log(restaurantObj.restaurant[0].dataValues.Comms[0].dataValues.User)
-            console.log("____________________________user user?")
-            console.log(restaurantObj.restaurant[0].dataValues.Comms[0].dataValues.User.dataValues)
-            console.log("____________________________user user?")
-            console.log(restaurantObj.restaurant[0].dataValues.Comms[0].dataValues.User.dataValues.user_name)
-
             res.render("restaurant", restaurantObj)
 
         })
