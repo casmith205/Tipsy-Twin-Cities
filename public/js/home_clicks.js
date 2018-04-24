@@ -16,14 +16,20 @@ $(function () {
         $.ajax("/api/user", {
             type: "GET",
             data: userInfo
-        }).then(
-            function (data) {
-                console.log("Searched for the following: ", userInfo);
-                localStorage.setItem("user_id", data[0].id);
-                localStorage.setItem("user_name", data[0].user_name);
-                localStorage.setItem("user_verified", data[0].verified);
-                location.reload();
-            });
+        })
+            .then(
+                function (data) {
+                    console.log("Searched for the following: ", userInfo);
+                    localStorage.setItem("user_id", data[0].id);
+                    localStorage.setItem("user_name", data[0].user_name);
+                    localStorage.setItem("user_verified", data[0].verified);
+                    location.reload();
+                })
+            .fail(
+                function (err) {
+                    alert(err);
+                }
+            )
     });
 
     // Sign Up for the website 
@@ -45,19 +51,24 @@ $(function () {
             email: email,
             password: password
         };
-        console.log(userInfo);
         $.ajax("/api/new_user", {
             type: "POST",
             data: userInfo
-        }).then(
-            function () {
-                console.log("Added the following: ", userInfo);
-                localStorage.setItem("user_id", data[0].id);
-                localStorage.setItem("user_name", data[0].user_name);
-                localStorage.setItem("user_verified", data[0].verified);
-                // Reload the page to get the updated list
-                location.reload();
-            });
+        })
+            .then(
+                function () {
+                    console.log("Added the following: ", userInfo);
+                    localStorage.setItem("user_id", data[0].id);
+                    localStorage.setItem("user_name", data[0].user_name);
+                    localStorage.setItem("user_verified", data[0].verified);
+                    // Reload the page to get the updated list
+                    location.reload();
+                })
+            .fail(
+                function (err) {
+                    alert(err);
+                }
+            )
     });
 
 });

@@ -2,25 +2,13 @@
 // =============================================================
 // Requiring our model
 var db = require("../models");
-// Requiring express
-var express = require("express");
-var app = express.Router();
 var sendEmail = require("../verification/email.js")
-
-
 
 // Routes
 // =============================================================
 module.exports = function (app) {
 
-  // GET route for getting all of the users
-  app.get("/api/all", function (req, res) {
-    db.User.findAll({}).then(function (results) {
-      res.json(results);
-    });
-  });
-
-  // POST route for saving a user
+  // POST route for saving a new user to the db
   app.post("/api/new_user", function (req, res) {
     console.log("User Data:");
     console.log(req.body);
@@ -30,29 +18,37 @@ module.exports = function (app) {
       last_name: req.body.last_name,
       email: req.body.email,
       password: req.body.password
-    }).then(function (result){
+    })
+      .then(function (result) {
         sendEmail(result.dataValues.id, result.dataValues.email);
-    });
+      })
+      .catch(function (err) {
+        res.json(err);
+      })
   });
 
-  // Get a specific user
+  // GET the user with this email and password
   app.get("/api/user", function (req, res) {
     db.User.findAll({
       where: {
         email: req.query.email,
         password: req.query.password
       }
-    }).then(function (result) {
-      var userObj = {
-        users: result
-      }
-      res.json(result);
-    });
+    })
+      .then(function (result) {
+        var userObj = {
+          users: result
+        }
+        res.json(result);
+      })
+      .catch(function (err) {
+        res.json(err);
+      })
   });
 
-  // PUT route for updating user
+  // PUT route for updating user's VALIDATED field
   app.put("/api/user_update", function (req, res) {
-    db.User.update({"verified":true},
+    db.User.update({ "verified": true },
       {
         where: {
           id: req.body.id
@@ -60,6 +56,9 @@ module.exports = function (app) {
       })
       .then(function (result) {
         res.json(result);
-      });
+      })
+      .catch(function (err) {
+        res.json(err);
+      })
   });
 };
