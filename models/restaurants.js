@@ -12,10 +12,13 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.TEXT
     },
     phone_number: {
-      type:DataTypes.STRING,
-      // validate: {
-      //   isNumeric: true
-      // }
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [10, 10],
+          msg: "Phone number must be 10 digits."
+        }
+      }
     },
     restaurant_website: {
       type: DataTypes.STRING,

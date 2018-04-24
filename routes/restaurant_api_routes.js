@@ -21,7 +21,6 @@ module.exports = function (app) {
     });
 
     // GET route for getting CERTAIN restaurants
-    // ****NEED TO EDIT THIS TO CORRESPOND TO FORM******
     app.get("/api/restaurants/search", function (req, res) {
         db.Restaurant.findAll({
             include: [db.Deal],
