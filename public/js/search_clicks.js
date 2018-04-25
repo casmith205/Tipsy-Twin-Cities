@@ -48,12 +48,28 @@ $(function () {
                         dealDay.text("Day : " + results[i].day)
                         dealInfo.append(dealDay)
                         //starts
+                        var startTime;
+                        if (results[i].start_time <= 12) {
+                            startTime = results[i].start_time + ":00"
+                        }
+                        else{
+                            startTime = (results[i].start_time-12) + ":00"
+
+                        }
+                        console.log(startTime)
                         var start = $("<p>")
-                        start.text("Starts at: " + results[i].start_time)
+                        start.text("Starts at: " + startTime)
                         dealInfo.append(start)
                         //ends
+                        if (results[i].end_time <= 12) {
+                            endTime = results[i].end_time + ":00"
+                        }
+                        else{
+                            endTime = (results[i].end_time-12) + ":00"
+
+                        }
                         var end = $("<p>")
-                        end.text("Ends at: " + results[i].end_time)
+                        end.text("Ends at: " + endTime)
                         dealInfo.append(end)
                         //type
                         var type = $("<p>")
