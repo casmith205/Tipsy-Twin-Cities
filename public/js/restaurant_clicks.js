@@ -36,18 +36,6 @@ $(function () {
         $("#commentDiv").hide()
         $("#contactDiv").show()
     })
-    //on click map button hide other divs AND google api call
-    // $("#mapBtn").on("click", function (event) {
-    //     event.preventDefault()
-    //     $("#detailsDiv").hide()
-    //     $("#dealsDiv").hide()
-    //     $("#contactDiv").hide()
-    //     $("#commentDiv").hide()
-    //     $("#mapDiv").show()
-    //     //google GET ajax call using data-address attribute stored in mapBtn
-    
-  
-    // });
 
     //on click comment hide other divs
     $("#commentBtn").on("click", function (event) {
