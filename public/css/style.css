@@ -3,6 +3,7 @@ body {
     background-image: url("https://image.freepik.com/free-photo/wooden-planks-with-blurred-restaurant-background_1253-56.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Montserrat', sans-serif;
 }
 /* card bg color */
 
@@ -20,10 +21,11 @@ body {
 }
 /* HOME PAGE STYLING */
 .jumbotron{
-    padding: 50px;
+    padding: 40px;
     color: burlywood;
     text-align: center;
     background-color: white;
+    margin: 10px;
 }
 .display-4 {
     text-align: center;
