@@ -33,7 +33,7 @@ $(function () {
                 else {
                     for (var i = 0; i < results.length; i++) {
                         //div to hold info for each result returned
-                        var eachResult = $("<div>")
+                        var eachResult = $("<div class='dealHead'>")
                         eachResult.addClass("card m-4")
                         //element for restuarant title
                         var restaurantName = $("<h5>")
@@ -41,11 +41,11 @@ $(function () {
                         restaurantName.text(results[i].Restaurant.restaurant_name)
                         eachResult.append(restaurantName)
                         //div for deal info
-                        var dealInfo = $("<div>")
+                        var dealInfo = $("<div class='dealInfo'>")
                         dealInfo.addClass("card-text text-center p-2")
                         //day
                         var dealDay = $("<p>")
-                        dealDay.text("Day : " + results[i].day)
+                        dealDay.text("Day: " + results[i].day)
                         dealInfo.append(dealDay)
                         //starts
                         var startTime;
@@ -73,11 +73,11 @@ $(function () {
                         dealInfo.append(end)
                         //type
                         var type = $("<p>")
-                        type.text("What I am getting a deal on: " + results[i].deal_type)
+                        type.text("Deal Type: " + results[i].deal_type)
                         dealInfo.append(type)
                         //description
                         var description = $("<p>")
-                        description.text("What exactly is this deal? " + results[i].deal_description)
+                        description.text("Description: " + results[i].deal_description)
                         dealInfo.append(description)
                         //restrictions
                         var restriction = $("<p>")
@@ -88,7 +88,7 @@ $(function () {
                         detailsLink.attr("href", "/restaurant/" + results[i].Restaurant.id)
                         detailsLink.attr("restaurant-id", results[i].Restaurant.id)
                         detailsLink.addClass("moreDetails btn btn-lrg btn-outline-dark")
-                        detailsLink.text("I WANNA GO HERE")
+                        detailsLink.html("<i class='material-icons'>keyboard_arrow_right</i>")
                         dealInfo.append(detailsLink)
 
 

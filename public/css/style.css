@@ -112,3 +112,14 @@ label {
 #phone{
     display: inline;
 }
+
+.dealInfo{
+    background-color: blanchedalmond;
+    color: black;
+    font-weight: 500;
+}
+
+.dealHead{
+    background-color: rgba(112, 76, 34, 0.61);
+    color: white;
+}
