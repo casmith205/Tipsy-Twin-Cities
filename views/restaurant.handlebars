@@ -44,19 +44,16 @@
         </div>
         <div class="comments-list">
 
-          {{#each restaurant}} {{#each Comms}}
-          {{!-- {{#each User}} --}}
+          {{#each restaurant}} {{#each Comms}} {{!-- {{#each User}} --}}
 
           <div class="row">
-            
+
             <p> Posted By: {{ User.user_name }} </p>
-        
+
             <p class="col-md-2">Rating: {{rating}}</p>
             <p>{{comment_text}}</p>
           </div>
-          <hr class="my-4"> 
-          {{!-- //{{/each}} --}}
-          {{/each}} {{/each}}
+          <hr class="my-4"> {{!-- //{{/each}} --}} {{/each}} {{/each}}
         </div>
       </div>
 
@@ -121,7 +118,61 @@
       </div>
       {{!-- display restaurant location on map using google maps api --}}
       <div id="mapDiv">
-        <p>map and stuff from google api... could do get call on click of button</p>
+        <h3>Location</h3>
+        <div id="map"></div>
+        <script>
+          //set address var 
+          var address;
+          //define function to display initalmap 
+          function initMap() {
+            var minneapolis = { lat: 44.9778, lng: -93.2650 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 11,
+              center: minneapolis
+            });
+            //set geocoder bar
+            var geocoder = new google.maps.Geocoder();
+
+            //run geocode function on address when map btn clicked
+            $("#mapBtn").on("click", function (event) {
+              console.log("clickin")
+              event.preventDefault()
+              $("#detailsDiv").hide()
+              $("#dealsDiv").hide()
+              $("#contactDiv").hide()
+              $("#commentDiv").hide()
+              $("#mapDiv").show()
+              //store value from button in address var to pass in geocode function
+              address = $(this).attr("data-address")
+              console.log(address)
+              geocodeAddress(geocoder, map)
+            })
+          }
+
+          function geocodeAddress(geocoder, resultsMap) {
+            geocoder.geocode({ 'address': address }, function (results, status) {
+              if (status === 'OK') {
+                resultsMap.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                  map: resultsMap,
+                  position: results[0].geometry.location
+                });
+              } else {
+                console.log('Geocode was not successful for the following reason: ' + status);
+                alert("Hmmmm... We cannont find the address associated with this establishment")
+              }
+            });
+          }
+
+
+
+
+        </script>
+
+
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACbw2VQls0kWKLXKMPdiTxyM83eM3eXUY&callback=initMap">
+        </script>
+
       </div>
 
     </div>
