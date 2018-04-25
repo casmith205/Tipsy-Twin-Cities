@@ -53,7 +53,7 @@ $(function () {
                             startTime = results[i].start_time + ":00"
                         }
                         else{
-                            startTime = (results[i].start_time-12) + ":00"
+                            startTime = (results[i].start_time-12) + ":00 PM"
 
                         }
                         console.log(startTime)
@@ -65,7 +65,7 @@ $(function () {
                             endTime = results[i].end_time + ":00"
                         }
                         else{
-                            endTime = (results[i].end_time-12) + ":00"
+                            endTime = (results[i].end_time-12) + ":00 PM"
 
                         }
                         var end = $("<p>")

@@ -79,13 +79,8 @@ $(function () {
                     console.log(errArray)
                     for (var i = 0; i < errArray.length; i++) {
                         console.log(errArray[i])
-                        swal({
-                            title: "Error",
-                            text: errArray[i].message,
-                            icon: "warning",
-                            buttons: true,
-                            dangerMode: true,
-                          })
+                        alertify.alert('ERROR', errArray[i].message);
+
                         // alert(errArray[i].message)
 
 

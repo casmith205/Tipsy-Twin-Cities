@@ -83,19 +83,9 @@ $(function () {
         ).fail(function (err) {
             console.log("err", err)
             var errArray = err.responseJSON.errors
-            for (var i = 0; i < errArray.length; i++) {
-                console.log(errArray[i])
-                alert(errArray[i].message)
-                //sweet alert not working
-                // swal({
-                //     title: "Error",
-                //     text: errArray[i].message,
-                //     icon: "warning",
-                //     buttons: true,
-                //     dangerMode: true,
-                //   })
-
-            }
+                console.log(errArray[0])
+                alert(errArray[0].message)
+                // alertify.alert('ERROR', errArray[0].message); //not working,... reloading page 
 
 
         });
