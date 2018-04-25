@@ -86,7 +86,14 @@ $(function () {
             for (var i = 0; i < errArray.length; i++) {
                 console.log(errArray[i])
                 alert(errArray[i].message)
-
+                //sweet alert not working
+                // swal({
+                //     title: "Error",
+                //     text: errArray[i].message,
+                //     icon: "warning",
+                //     buttons: true,
+                //     dangerMode: true,
+                //   })
 
             }
 
