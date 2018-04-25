@@ -89,13 +89,13 @@ $(function () {
             .fail(
                 function (err) {
                     console.log("err", err)
-                    // console.log("err message?", err.responseJSON)
                     var errArray = err.responseJSON.errors
                     console.log(errArray)
                     for (var i = 0; i < errArray.length; i++) {
                         console.log(errArray[i])
+                        alertify.alert('ERROR', errArray[i].message);
 
-                        alert(errArray[i].message)
+                        // alert(errArray[i].message)
  
                     }
                 }
