@@ -108,3 +108,7 @@ label {
 .material-icons{
     display: block;
 }
+
+#phone{
+    display: inline;
+}
