@@ -109,7 +109,7 @@
       {{!-- display contact info from restaurant table in db --}}
       <div id="contactDiv">
         {{#each restaurant}}
-        <h5> Phone number:
+        <h5>Phone Number<i class="material-icons" id="phone">call</i>:
           <a href="tel:+1{{phone_number}}">{{phone_number}}</a>
         </h5>
         <h5>Address: {{restaurant_address}}
