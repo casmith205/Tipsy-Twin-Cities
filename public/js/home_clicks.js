@@ -48,6 +48,12 @@ $(function () {
         var last_name = $("#lastName").val().trim();
         var email = $("#emailAddressNew").val();
         var password = $("#pwNew").val().trim();
+        //clear input boxes
+        $("#userName").val("")
+        $("#firstName").val("")
+        $("#lastName").val("")
+        $("#emailAddressNew").val("")
+        $("#pwNew").val("")
 
 
         // Set the information that we want to send to the API....
@@ -85,15 +91,6 @@ $(function () {
 
 
                     }
-
-                    // alert(err.user_name); undefined
-                    // alert(err.User) undefined
-                    // alert(JSON.stringify(err)); buncha text
-                    // alert(err.errors); undefined
-                    // alert(err.errors[0]);
-
-
-
 
                 }
             )
