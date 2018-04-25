@@ -33,9 +33,9 @@
         <h5 class="card-title" id="restaurantName">{{restaurant_name}}
         </h5>
         <p class="card-text" id="restaurantType">{{description}}</p>
-        <a id="restaurantWeblink" href="{{restaurant_website}}" class="btn btn-outline-dark">Go to Website</a>
+        <a id="restaurantWeblink" target="_blank" href="{{restaurant_website}}" class="btn btn-outline-dark">Go to Website</a>
         {{/each}}
-        <a id="restaurantWeblink" href="/search" class="btn btn-outline-dark">Back to Search</a>
+        <a id="backtoSearch" href="/search" class="btn btn-outline-dark">Back to Search</a>
         {{!-- see all past comments /review for restaurant --}}
         <div class="row">
           <div class="page-header">
@@ -94,11 +94,11 @@
           <div class="form-group">
             <label>Rating</label>
             <select class="form-control" id="rating">
-              <option value="1">1 *</option>
-              <option value="2">2 **</option>
-              <option value="3">3 ***</option>
-              <option value="4">4 ****</option>
-              <option value="5">5 *****</option>
+              <option value="1">1 </option>
+              <option value="2">2 </option>
+              <option value="3">3 </option>
+              <option value="4">4 </option>
+              <option value="5">5 </option>
             </select>
           </div>
           {{#each restaurant}}
