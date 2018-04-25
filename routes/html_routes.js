@@ -99,7 +99,6 @@ module.exports = function (app) {
                 // }
             }
 
-
             res.render("restaurant", restaurantObj)
 
         })

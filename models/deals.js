@@ -39,14 +39,14 @@ module.exports = function(sequelize, DataTypes) {
           msg: "Must be Food, Drink, or Both"
         }
       },
-      // verified: {
-      //   type:DataTypes.BOOLEAN,
-      //   defaultValue: false
-      // },
-      // flagged: {
-      //   type:DataTypes.BOOLEAN,
-      //   defaultValue: false
-      // }
+      verified: {
+        type:DataTypes.BOOLEAN,
+        defaultValue: false
+      },
+      flagged: {
+        type:DataTypes.BOOLEAN,
+        defaultValue: false
+      }
     });
   
     Deal.associate = function(models) {

@@ -1,20 +1,21 @@
 <div class="searchForm">
     <form>
-            <img src="./images/tipsy.jpg" class="log">
+        <img src="./images/tipsy.jpg" class="log">
 
         <div class="form-group mb-2">
             <label class="mr-1">Restaurant: </label>
-            
+
             <select id="existingRestaurants">
-                
+
                 {{#each restaurants}}
                 <option class="restaurant" id="chosenRest" value="{{id}}">{{restaurant_name}}</option>
                 {{/each}}
             </select>
-            
+
         </div>
         <!-- Button trigger modal -->
-      <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#addRestaurant"><i class="material-icons">restaurant_menu</i>
+        <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#addRestaurant">
+            <i class="material-icons">restaurant_menu</i>
             Add a new restaurant...
         </button>
 
@@ -40,6 +41,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="newRestPhone">Phone Number</label>
+                                <label for="newRestPhone">(only numbers--no parenthesis or dashes)</label>
                                 <input type="text" class="form-control" id="newRestPhone" placeholder="10-digit phone number">
                             </div>
                             <div class="form-group">
@@ -67,7 +69,8 @@
             <input type="text" class="form-control" id="newDealDesc" placeholder="Ex. $2 off all taps!">
         </div>
         <br>
-        <div class="form-row"><b>What day of the week is the deal?</b>
+        <div class="form-row">
+            <b>What day of the week is the deal?</b>
             <br>
             <div class="form-check">
                 <label class="form-check-label">
@@ -182,9 +185,9 @@
             <label for="newDealRestrictions">Any restrictions?</label>
             <input type="text" class="form-control" id="newDealRestrictions" placeholder="Ex. No coupons/groupons/etc.">
         </div>
-              <button type="submit" class="btn btn-outline-dark" data-toggle="modal" data-target="#userSignIn"><i class="material-icons">restaurant_menu</i>
-                Submit
-                </button>
-        {{!-- <button type="Submit" id="submitBtnDeal" class="btn btn-primary btn-lg">Submit</button> --}}
+        <button type="submit" id="submitBtnDeal" class="btn btn-outline-dark" data-toggle="modal" data-target="#userSignIn">
+            <i class="material-icons">restaurant_menu</i>
+            Submit
+        </button>
     </form>
 </div>
