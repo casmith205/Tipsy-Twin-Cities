@@ -136,7 +136,12 @@ label {
     color: white;
 }
 
+.reviews{
+    height: 50px;
+    margin: 20px 0px 20px 0px;
+}
 
+/* MEDIA QUERIES */
 @media (min-width: 768px){
     .jumbotron{
         width: 75%
