@@ -64,7 +64,7 @@ a:hover {
     background-color: white;
     border-radius: 20px;
     padding: 20px;
-    margin-top: 50px;
+    margin: 50px 30px 30px 50px;
 }
 /* ADD PAGE FORMATTING */
 .form-check-label {
