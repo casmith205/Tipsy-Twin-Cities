@@ -148,6 +148,13 @@ label {
         font-size:2rem;
     }
     .mainLinks{
+        font-size: 1.05rem;
+        display: block;
+        position: relative;
+        left: 25%;
+    }
+    .signLinks{
+        font-size: 1.75rem;
         display: block;
         position: relative;
         left: 25%;
