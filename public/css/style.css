@@ -5,6 +5,9 @@ body {
     background-size: cover;
     font-family: 'Montserrat', sans-serif;
 }
+button{
+    cursor: pointer;
+}
 /* card bg color */
 
 .card{
@@ -81,11 +84,16 @@ label {
     text-align: left;
 }
 
-/* FOOTER STYLING*/
-    .page-footer{
+/* HEADER STYLING*/
+    .page-header{
         background: burlywood;
         width: 100%;
         color: rgba(112, 76, 34, 0.61);
+        opacity: .8;
+        height: 30px;
+      }
+      #logOut{
+          cursor: pointer;
       }
       #logOut:hover{
           color: blanchedalmond

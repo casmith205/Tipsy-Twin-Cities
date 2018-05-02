@@ -30,20 +30,21 @@
 </head>
 
 <body>
-	<div class="container mx-auto">
-		{{{ body }}}
-	</div>
-	<footer class="page-footer font-small pt-2 mt-4">
+		<header class="page-header font-small pt-2">
 		<div class="container">
 			<div class="row mx-auto logOutRow">
-				<p class="font-weight-light">Logged in as :
+				<p class="font-weight-light">Currently logged in as:
 					<span id="signedInUser"></span>
 				</p>
+				<p>... </p>
 				<span id="logOut">LOG OUT</span>
 			</div>
 		</div>
+	</header
+	<div class="container mx-auto">
+		{{{ body }}}
+	</div>
 
-	</footer>
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
