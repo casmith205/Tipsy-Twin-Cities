@@ -29,6 +29,7 @@ button{
     text-align: center;
     background-color: white;
     margin: 20px;
+    position: fixed
 }
 .display-4 {
     text-align: center;
