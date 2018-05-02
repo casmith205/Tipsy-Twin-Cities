@@ -29,6 +29,7 @@ button{
     text-align: center;
     background-color: white;
     margin: 20px;
+    position: fixed
 }
 .display-4 {
     text-align: center;
@@ -147,6 +148,13 @@ label {
         font-size:2rem;
     }
     .mainLinks{
+        font-size: 1.05rem;
+        display: block;
+        position: relative;
+        left: 25%;
+    }
+    .signLinks{
+        font-size: 1.75rem;
         display: block;
         position: relative;
         left: 25%;

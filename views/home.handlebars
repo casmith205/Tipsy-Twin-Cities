@@ -1,13 +1,14 @@
 <div class="jumbotron">
-  
-  {{!-- <div class="display-4">Tipsy Twin Cities</div> --}}
-<img src="./images/tipsy.jpg" id="logo">
+
+  {{!--
+  <div class="display-4">Tipsy Twin Cities</div> --}}
+  <img src="./images/tipsy.jpg" id="logo">
 
   <div class="intro">Trying to find a happy hour in the Twin Cities used to be difficult. We want a good deal, but at what cost? Now, we can
     do what Minnesotans do best and come together. Add a happy hour, verify the accuracy of the deals posted, and comment
     on the bars themselves! Is the beer bad? Is the food worth it? Let your neighbors know.
   </div>
-  
+
   <div class="row text-center mainLinks">
     <div class="findHH col-md-6 mb-2">
       <a href="/search">
@@ -21,13 +22,13 @@
     </div>
   </div>
   <hr>
-  <div class="row text-center mx-auto">
-    <div class="col-md-3"></div>
-    <div class="col-md-3">
+  <div class="row text-center mx-auto signLinks">
+    <div class="col-md-6 mb-2">
       <p> Already a user?</p>
       {{!-- SIGN IN BUTTON --}}
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#userSignIn"><i class="material-icons">account_circle</i>
+      <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#userSignIn">
+        <i class="material-icons">account_circle</i>
         Sign In
       </button>
 
@@ -55,18 +56,20 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-signIn">Sign In<i class="material-icons">restaurant_menu</i></button>
+              <button type="button" class="btn btn-signIn">Sign In
+                <i class="material-icons">restaurant_menu</i>
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-6 mb-2">
       <p>New user?</p>
       {{!-- SIGN UP BUTTON --}}
       <!-- Button trigger modal -->
       <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#userSignUp">
-      <i class="material-icons">account_circle</i>Sign Up
+        <i class="material-icons">account_circle</i>Sign Up
       </button>
 
       <!-- Modal -->
@@ -113,6 +116,5 @@
         </div>
       </div>
     </div>
-    <div class="col-md-3"></div>
   </div>
 </div>
