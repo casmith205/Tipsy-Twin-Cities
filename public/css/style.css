@@ -1,7 +1,7 @@
 /* Background image on all pages */
 body {
     background-image: url("https://image.freepik.com/free-photo/wooden-planks-with-blurred-restaurant-background_1253-56.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     font-family: 'Montserrat', sans-serif;
 }
@@ -25,10 +25,10 @@ button{
 /* HOME PAGE STYLING */
 .jumbotron{
     padding: 40px;
-    color: burlywood;
+    color: rgb(126, 105, 79);
     text-align: center;
     background-color: white;
-    margin: 10px;
+    margin: 20px;
 }
 .display-4 {
     text-align: center;
@@ -64,7 +64,7 @@ a:hover {
     background-color: white;
     border-radius: 20px;
     padding: 20px;
-    margin-top: 50px;
+    margin: 50px 30px 30px 30px;
 }
 /* ADD PAGE FORMATTING */
 .form-check-label {
@@ -104,8 +104,10 @@ label {
       .log {
           height: 200px;
           display: block;
-         margin: 0 auto;
-
+          margin: 0 auto;
+      }
+      .logOutRow{
+          text-align: center;
       }
 /* map styling */
 #map {
@@ -132,4 +134,21 @@ label {
 .dealHead{
     background-color: rgba(112, 76, 34, 0.61);
     color: white;
+}
+
+.reviews{
+    height: 50px;
+    margin: 20px 0px 20px 0px;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 980px){
+    .intro{
+        font-size:2rem;
+    }
+    .mainLinks{
+        display: block;
+        position: relative;
+        left: 25%;
+    }
 }
