@@ -28,7 +28,7 @@ button{
     color: rgb(126, 105, 79);
     text-align: center;
     background-color: white;
-    margin: 10px;
+    margin: 20px;
 }
 .display-4 {
     text-align: center;
@@ -64,7 +64,7 @@ a:hover {
     background-color: white;
     border-radius: 20px;
     padding: 20px;
-    margin: 50px 30px 30px 50px;
+    margin: 50px 30px 30px 30px;
 }
 /* ADD PAGE FORMATTING */
 .form-check-label {
@@ -134,4 +134,11 @@ label {
 .dealHead{
     background-color: rgba(112, 76, 34, 0.61);
     color: white;
+}
+
+
+@media (min-width: 768px){
+    .jumbotron{
+        width: 75%
+    }
 }
