@@ -27,7 +27,8 @@ $(function () {
                 console.log("Searched for the following: ", searchInfo);
                 console.log("results arry of objs: ", results)
                 if (results.length === 0) {
-                    alert("Sorry... no restaurants found that meet your needs");
+                    // alert("Sorry... no restaurants found that meet your needs");
+                    alertify.alert('SORRY', "No matches were found that meet your needs today!");
 
                 }
                 else {
