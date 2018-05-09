@@ -4,12 +4,21 @@ body {
     background-repeat: repeat;
     background-size: cover;
     font-family: 'Open Sans', sans-serif;
+    color: #c4cadc;
 }
 button{
     cursor: pointer;
 }
-/* card bg color */
 
+.logo{
+    background-image: url(../images/croppedLogoLarge.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    height: 150px;
+}
+
+/* card bg color */
 .card{
     background-color: #060f54
 }
@@ -64,7 +73,7 @@ a:hover {
     text-align: center;
 }
 .searchForm {
-    background-color: white;
+    background-color: #060f54;
     border-radius: 20px;
     padding: 20px;
     margin: 50px 30px 30px 30px;
@@ -89,7 +98,7 @@ label {
 
 /* HEADER STYLING*/
     .page-header{
-        background: burlywood;
+        background: #f1a961;
         width: 100%;
         color: rgba(112, 76, 34, 0.61);
         opacity: .8;
@@ -129,14 +138,14 @@ label {
 }
 
 .dealInfo{
-    background-color: blanchedalmond;
-    color: black;
+    background-color: #060f54;
+    color: #c4cadc;
     font-weight: 600;
 }
 
 .dealHead{
-    background-color: rgba(112, 76, 34, 0.61);
-    color: white;
+    background-color: #c4cadc;
+    color: #060f54;
 }
 
 .reviews{
@@ -160,5 +169,12 @@ label {
         display: block;
         position: relative;
         left: 25%;
+    }
+    .logo{
+        background-image: url(../images/TipsyLogoLargeCrop.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: center;
+        height: 150px;
     }
 }
