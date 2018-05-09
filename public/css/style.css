@@ -29,6 +29,7 @@ button{
     opacity: .85; 
     text-align: center;
     background-color: #060f54;
+    border-radius: 20px;
     margin: 20px;
     /* position: fixed */
 }
