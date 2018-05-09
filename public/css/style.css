@@ -11,25 +11,26 @@ button{
 /* card bg color */
 
 .card{
-    background-color: white;
+    background-color: #060f54
 }
 /* all buttons same colors */
 .btn{
     background-color:  none;
-    color:rgba(112, 76, 34, 0.877);
+    color:#f1a961;
 }
 .btn:hover {
-    background-color: rgba(112, 76, 34, 0.61);
-    color: blanchedalmond;
+    background-color:#f1a961;
+    color: #060f54;
 }
 /* HOME PAGE STYLING */
 .jumbotron{
     padding: 40px;
-    color: rgb(126, 105, 79);
+    color: #c4cadc;
+    opacity: .85; 
     text-align: center;
-    background-color: white;
+    background-color: #060f54;
     margin: 20px;
-    position: fixed
+    /* position: fixed */
 }
 .display-4 {
     text-align: center;
@@ -44,10 +45,10 @@ button{
 }
 .btn-user {
     background: grey;
-    color: black;
+    color: #f1a961;
 }
 a {
-    color: black;
+    color: #f1a961;
     text-decoration-style: none;
 }
 a:hover {
@@ -81,7 +82,7 @@ label {
 }
 /* MODAL FORMATTING */
 .modal{
-    color: black;
+    color: #f1a961;
     text-align: left;
 }
 
