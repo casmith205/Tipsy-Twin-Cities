@@ -32,35 +32,7 @@
         Sign In
       </button>
 
-      <!-- Modal -->
-      <div class="modal fade" id="userSignIn" tabindex="-1" role="dialog" aria-labelledby="userSignInTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="userSignInTitle">Sign In</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="emailAddress">Email address</label>
-                  <input type="email" class="form-control" id="emailAddress" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="pw">Password</label>
-                  <input type="password" class="form-control" id="pw" placeholder="Password">
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-signIn">Sign In</button>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
     <div class="col-md-6 mb-2">
       <p>New user?</p>
@@ -70,48 +42,80 @@
         <i class="material-icons">account_circle</i>Sign Up
       </button>
 
-      <!-- Modal -->
-      <div class="modal fade" id="userSignUp" tabindex="-1" role="dialog" aria-labelledby="userSignUpTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="userSignUpTitle">Sign Up</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="form-group">
-                  <label for="firstName">First Name</label>
-                  <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
-                </div>
-                <div class="form-group">
-                  <label for="lastName">Last Name</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
-                </div>
-                <br>
-                <div class="form-group">
-                  <label for="userName">User Name</label>
-                  <input type="text" class="form-control" id="userName" placeholder="Choose User Name that will display on your comments...">
-                </div>
-                <br>
-                <div class="form-group">
-                  <label for="emailAddressNew">Email address</label>
-                  <input type="email" class="form-control" id="emailAddressNew" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="pwNew">Password</label>
-                  <input type="password" class="form-control" id="pwNew" placeholder="Password">
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-signUp" data-dismiss="modal">Sign Up</button>
-            </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Sign In Modal-->
+<div class="modal fade" id="userSignIn" tabindex="-1" role="dialog" aria-labelledby="userSignInTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="userSignInTitle">Sign In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="emailAddress">Email address</label>
+            <input type="email" class="form-control" id="emailAddress" placeholder="Enter email">
           </div>
-        </div>
+          <div class="form-group">
+            <label for="pw">Password</label>
+            <input type="password" class="form-control" id="pw" placeholder="Password">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-signIn">Sign In</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div class="modal fade" id="userSignUp" tabindex="-1" role="dialog" aria-labelledby="userSignUpTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="userSignUpTitle">Sign Up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="userName">User Name</label>
+            <input type="text" class="form-control" id="userName" placeholder="Choose User Name that will display on your comments...">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="emailAddressNew">Email address</label>
+            <input type="email" class="form-control" id="emailAddressNew" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="pwNew">Password</label>
+            <input type="password" class="form-control" id="pwNew" placeholder="Password">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-signUp" data-dismiss="modal">Sign Up</button>
       </div>
     </div>
   </div>
