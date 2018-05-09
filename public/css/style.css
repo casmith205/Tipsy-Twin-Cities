@@ -156,25 +156,23 @@ label {
 /* MEDIA QUERIES */
 @media (max-width: 980px){
     .intro{
-        font-size:2rem;
+        font-size:1.5rem;
     }
     .mainLinks{
-        font-size: 1.05rem;
+        font-size: 1rem;
         display: block;
         position: relative;
-        left: 25%;
     }
     .signLinks{
         font-size: 1.75rem;
         display: block;
         position: relative;
-        left: 25%;
     }
     .logo{
-        background-image: url(../images/TipsyLogoLargeCrop.jpg);
+        background-image: url(../images/largeLogo.png);
         background-repeat: no-repeat;
         background-size: contain;
         background-position-x: center;
-        height: 150px;
+        height: 175px;
     }
 }
