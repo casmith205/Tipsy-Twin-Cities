@@ -26,6 +26,7 @@ button{
 .btn{
     background-color:  none;
     color:#f1a961;
+    border: solid thin #f1a961;
 }
 .btn:hover {
     background-color:#f1a961;
@@ -40,7 +41,6 @@ button{
     background-color: #060f54;
     border-radius: 20px;
     margin: 20px;
-    /* position: fixed */
 }
 .display-4 {
     text-align: center;
