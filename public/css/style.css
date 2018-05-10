@@ -38,6 +38,9 @@ button{
     color: #060f54;
 }
 /* HOME PAGE STYLING */
+body{
+    position: fixed;
+}
 .jumbotron{
     padding: 40px;
     color: #c4cadc;
