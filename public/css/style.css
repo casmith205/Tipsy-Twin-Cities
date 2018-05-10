@@ -179,12 +179,12 @@ label {
         position: relative;
     }
     .signLinks{
-        font-size: 2rem;
+        font-size: 1.2rem;
         display: block;
         position: relative;
     }
     .btn{
-        font-size: 30px;
+        font-size: 20px;
         margin: 10px;
         border: thick solid #f1a961;
     }
@@ -214,65 +214,20 @@ label {
         margin: 20px;
         font-size: 1.2rem;
     }
-    .searchLabel{
-        /* font-size: 2.25rem; */
-    }
     .select{
-        height: 100px;
+        height: 80px;
     }
-    /* Deals that pop up from search */
-    /* .dealHead{
-        font-size: 2.5rem;
-    }
-    .card-header{
-        font-size: 2.5rem;
-    } */
+
     .dealIcons{
         display: block;
     }
     /* Add Page */
     .form-row{
-        /* font-size: 3rem; */
         margin-bottom: 10px;
         padding: 20px;
     }
     .form-control{
-        /* font-size: 2rem; */
         margin: 5px;
         padding: 5px;
     }
-    /* .form-check{
-        font-size: 1.5rem;
-    }
-    select{
-        font-size: 2rem; */
-    }
-    /* Restaurant Page */
-    /* .detailsBtn{
-        font-size: 2rem;
-    }
-    .card-title{
-        font-size: 3rem;
-    }
-    .card-text{
-        font-size: 2rem;
-    }
-    .comments-list{
-        font-size: 1.6rem;
-    }
-    #dealsDiv{
-        font-size: 1.75rem; */
-    /* }
-    h5{
-        font-size:2.5rem;
-    }
-    h3{
-        font-size:2.5rem;
-    } */
-    /* Modals */
-    /* .modal-title{
-        font-size: 2rem; */
-    /* } */
-    /* Alerts */
-
 }
