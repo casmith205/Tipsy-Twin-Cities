@@ -90,8 +90,14 @@ a:hover {
     padding-left: 0;
 }
 .form-row {
-    width: 60%;
     margin-bottom: 15px;
+}
+.form-check{
+    font-size: 1rem;
+}
+
+.form-check-label{
+    padding: 10px;
 }
 label {
     font-weight: bold;
@@ -210,10 +216,23 @@ label {
         font-size: 2.25rem;
     }
     .select{
-        height: 50px;
+        height: 100px;
     }
     /* Add Page */
     .form-row{
         font-size: 3rem;
+        margin-bottom: 10px;
+        padding: 20px;
+    }
+    .form-control{
+        font-size: 2rem;
+        margin: 5px;
+        padding: 5px;
+    }
+    .form-check{
+        font-size: 1.5rem;
+    }
+    select{
+        font-size: 2rem;
     }
 }
