@@ -171,31 +171,29 @@ label {
         padding: 5px;
     }
     .intro{
-        /* font-size:2.5rem; */
+        font-size:1.2rem;
     }
     .mainLinks{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         display: block;
         position: relative;
-        /* left: 25%; */
     }
     .signLinks{
         font-size: 2rem;
         display: block;
         position: relative;
-        /* left: 25%; */
     }
     .btn{
-        font-size: 50px;
-        margin: 20px;
+        font-size: 30px;
+        margin: 10px;
         border: thick solid #f1a961;
     }
     .material-icons{
         display: none;
     }
     .page-header{
-        height: 80px;
-        font-size: 1.5rem;
+        height: 60px;
+        font-size: 1.2rem;
         font-weight: bold;
     }
     /* Logo */
@@ -204,7 +202,7 @@ label {
         background-repeat: no-repeat;
         background-size: contain;
         background-position-x: center;
-        height: 500px;
+        height: 200px;
     }
     /* Search Page */
     .h4{
