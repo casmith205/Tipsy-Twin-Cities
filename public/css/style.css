@@ -171,7 +171,7 @@ label {
         padding: 5px;
     }
     .intro{
-        font-size:1.2rem;
+        font-size:1.3rem;
     }
     .mainLinks{
         font-size: 1.2rem;
@@ -216,6 +216,7 @@ label {
     }
     .select{
         height: 80px;
+        width: 100%;
     }
 
     .dealIcons{
