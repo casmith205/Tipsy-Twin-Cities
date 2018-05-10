@@ -158,6 +158,9 @@ label {
     /* Home Page */
     .jumbotron{
         margin: 5px;
+        width: 100%;
+        padding: 5px;
+        position: fixed;
     }
     .intro{
         font-size:2.5rem;
