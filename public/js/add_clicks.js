@@ -45,6 +45,7 @@ $(function () {
                 .done(
                     function (data) {
                         console.log("Added the following deal: ", dealInfo);
+                        location.reload();
                     }
                 )
                 .fail(
