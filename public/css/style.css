@@ -1,6 +1,7 @@
 /* Background image on all pages */
 body {
     background-image: url(../images/wild_oliva.png);
+    background-repeat: repeat;
     font-family: 'Open Sans', sans-serif;
     color: #c4cadc;
 }
@@ -156,7 +157,6 @@ label {
 @media (max-width: 980px){
     /* Home Page */
     .jumbotron{
-        position: relative;
         margin: 5px;
     }
     .intro{
@@ -175,7 +175,8 @@ label {
         left: 25%;
     }
     .btn{
-        font-size: larger;
+        font-size: 50px;
+        margin: 20px;
         border: thick solid #f1a961;
     }
     .material-icons{
@@ -202,8 +203,16 @@ label {
         display: block;
         position: relative;
         margin: 20px;
+        font-size: 1.5rem;
     }
     .searchLabel{
         font-size: 2.25rem;
+    }
+    .select{
+        height: 50px;
+    }
+    /* Add Page */
+    .form-row{
+        font-size: 1.5rem;
     }
 }
