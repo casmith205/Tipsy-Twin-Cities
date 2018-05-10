@@ -13,6 +13,12 @@ $(function () {
         var dealType = $("#newDealType").val();
         var dealRestrictions = $("#newDealRestrictions").val();
         var dealDays = [];
+        if(dealDesc ===""){
+            alertify.alert("Oops you forgot something!", "Please enter a deal description")
+        }
+        if(dealDays === []){
+            alertify.alert("Oops you forgot something!", "Please check the days the deal applies")
+        }
         // Loop through each box, check if it was checked, and psuh it to the dealDays arr if true
         for (i = 1; i < 8; i++) {
             var checkBox = "#day" + [i];
@@ -44,6 +50,7 @@ $(function () {
             })
                 .done(
                     function (data) {
+                        console.log(data)
                         console.log("Added the following deal: ", dealInfo);
                     }
                 )
