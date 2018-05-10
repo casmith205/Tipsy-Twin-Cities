@@ -24,13 +24,22 @@ $(function () {
             .done(
                 function (data) {
                     console.log("Searched for the following: ", userInfo);
-                    localStorage.setItem("user_id", data[0].id);
-                    localStorage.setItem("user_name", data[0].user_name);
-                    localStorage.setItem("user_verified", data[0].verified);
-                    location.reload();
+                    console.log(data)
+                    if (data.length ===0) {
+                        alertify.alert('ERROR', "No records found that match that username and/or password. Please try again!");
+
+                    }
+                    else {
+                        localStorage.setItem("user_id", data[0].id);
+                        localStorage.setItem("user_name", data[0].user_name);
+                        localStorage.setItem("user_verified", data[0].verified);
+                        location.reload();
+                    }
+
                 })
             .fail(
                 function (err) {
+                    console.log(err)
                     var errArray = err.responseJSON.errors
                     for (var i = 0; i < errArray.length; i++) {
                         alert(errArray[i].message)
