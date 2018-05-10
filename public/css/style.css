@@ -218,6 +218,16 @@ label {
     .select{
         height: 100px;
     }
+    /* Deals that pop up from search */
+    .dealHead{
+        font-size: 2.5rem;
+    }
+    .card-header{
+        font-size: 2.5rem;
+    }
+    .dealIcons{
+        display: block;
+    }
     /* Add Page */
     .form-row{
         font-size: 3rem;
@@ -235,4 +245,11 @@ label {
     select{
         font-size: 2rem;
     }
+    /* Restaurant Page */
+    /* Modals */
+    .modal-header{
+        font-size: 2rem;
+    }
+    /* Alerts */
+    
 }

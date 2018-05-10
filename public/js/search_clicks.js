@@ -89,7 +89,7 @@ $(function () {
                         detailsLink.attr("href", "/restaurant/" + results[i].Restaurant.id)
                         detailsLink.attr("restaurant-id", results[i].Restaurant.id)
                         detailsLink.addClass("moreDetails btn btn-lrg btn-outline-dark")
-                        detailsLink.html("<i class='material-icons'>keyboard_arrow_right</i>")
+                        detailsLink.html("<i class='material-icons dealIcons'>keyboard_arrow_right</i>")
                         dealInfo.append(detailsLink)
 
 
