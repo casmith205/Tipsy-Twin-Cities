@@ -8,6 +8,7 @@ button{
     cursor: pointer;
 }
 
+/* Logo Image formatting */
 .logo{
     background-image: url(../images/croppedLogoLarge.png);
     background-repeat: no-repeat;
@@ -16,9 +17,14 @@ button{
     height: 150px;
 }
 
+.searchLabel{
+    font-size: 1.25rem;
+}
+
 /* card bg color */
 .card{
-    background-color: #060f54
+    background-color: #060f54;
+    opacity: .85;
 }
 /* all buttons same colors */
 .btn{
@@ -74,6 +80,7 @@ a:hover {
     background-color: #060f54;
     border-radius: 20px;
     padding: 20px;
+    opacity: .85;
     margin: 50px 30px 30px 30px;
 }
 /* ADD PAGE FORMATTING */
@@ -88,37 +95,31 @@ a:hover {
 label {
     font-weight: bold;
 }
+
 /* MODAL FORMATTING */
-.modal{
-    color: #f1a961;
+.modal-content{
+    background-color: #c4cadc;
+    color: #060f54;
     text-align: left;
 }
 
 /* HEADER STYLING*/
-    .page-header{
-        background: #f1a961;
-        width: 100%;
-        color: rgba(112, 76, 34, 0.61);
-        opacity: .8;
-        height: 30px;
-      }
-      #logOut{
-          cursor: pointer;
-      }
-      #logOut:hover{
-          color: blanchedalmond
-      }
-      #logo {
-          height: 200px;
-      }
-      .log {
-          height: 200px;
-          display: block;
-          margin: 0 auto;
-      }
-      .logOutRow{
-          text-align: center;
-      }
+.page-header{
+    background: #f1a961;
+    width: 100%;
+    color: rgba(112, 76, 34, 0.61);
+    opacity: .8;
+    height: 30px;
+}
+#logOut{
+    cursor: pointer;
+}
+#logOut:hover{
+    color: blanchedalmond
+}
+.logOutRow{
+    text-align: center;
+}
 /* map styling */
 #map {
     width: 100%;
@@ -153,24 +154,56 @@ label {
 
 /* MEDIA QUERIES */
 @media (max-width: 980px){
+    /* Home Page */
+    .jumbotron{
+        position: relative;
+        margin: 5px;
+    }
     .intro{
-        font-size:1.5rem;
+        font-size:2.5rem;
     }
     .mainLinks{
-        font-size: 1rem;
+        font-size: 1.5rem;
         display: block;
         position: relative;
+        left: 25%;
     }
     .signLinks{
-        font-size: 1.75rem;
+        font-size: 2.5rem;
         display: block;
         position: relative;
+        left: 25%;
     }
+    .btn{
+        font-size: larger;
+        border: thick solid #f1a961;
+    }
+    .material-icons{
+        display: none;
+    }
+    .page-header{
+        height: 80px;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    /* Logo */
     .logo{
         background-image: url(../images/largeLogo.png);
         background-repeat: no-repeat;
         background-size: contain;
         background-position-x: center;
-        height: 175px;
+        height: 500px;
+    }
+    /* Search Page */
+    .h4{
+        font-size: 2.5rem;
+    }
+    .form-group{
+        display: block;
+        position: relative;
+        margin: 20px;
+    }
+    .searchLabel{
+        font-size: 2.25rem;
     }
 }
