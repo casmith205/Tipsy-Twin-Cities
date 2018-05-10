@@ -1,6 +1,6 @@
 /* Background image on all pages */
 body {
-    background-image: url(../images/wild_oliva.png);
+    background-image: url("https://image.freepik.com/free-photo/wooden-planks-with-blurred-restaurant-background_1253-56.jpg");
     background-repeat: repeat;
     font-family: Arial, Helvetica, sans-serif;
     color: #c4cadc;
@@ -171,7 +171,7 @@ label {
         padding: 5px;
     }
     .intro{
-        font-size:1.2rem;
+        font-size:1.3rem;
     }
     .mainLinks{
         font-size: 1.2rem;
@@ -216,6 +216,7 @@ label {
     }
     .select{
         height: 80px;
+        width: 100%;
     }
 
     .dealIcons{
