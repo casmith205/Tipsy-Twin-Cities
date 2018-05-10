@@ -26,6 +26,7 @@ button{
 .card{
     background-color: #060f54;
     opacity: .85;
+    border-radius: 20px;
 }
 /* all buttons same colors */
 .btn{
@@ -114,7 +115,7 @@ label {
 .page-header{
     background: #f1a961;
     width: 100%;
-    color: rgba(112, 76, 34, 0.61);
+    color:#060f54;
     opacity: .8;
     height: 30px;
 }
@@ -246,10 +247,31 @@ label {
         font-size: 2rem;
     }
     /* Restaurant Page */
+    .detailsBtn{
+        font-size: 2rem;
+    }
+    .card-title{
+        font-size: 3rem;
+    }
+    .card-text{
+        font-size: 2rem;
+    }
+    .comments-list{
+        font-size: 1.6rem;
+    }
+    #dealsDiv{
+        font-size: 1.75rem;
+    }
+    h5{
+        font-size:2.5rem;
+    }
+    h3{
+        font-size:2.5rem;
+    }
     /* Modals */
-    .modal-header{
+    .modal-title{
         font-size: 2rem;
     }
     /* Alerts */
-    
+
 }
